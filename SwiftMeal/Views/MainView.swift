@@ -19,10 +19,8 @@ struct MainView: View {
                 if mealViewModel.meal != nil {
                     MealCard(meal: (mealViewModel.meal!))
                 }
+                Spacer()
             }
-//            VStack{
-//                Text(mealViewModel.meal?.strMeal ?? "")
-//            }
             .onChange(of: searchText) { searchText in
                 mealViewModel.searchMealByName(name: searchText)
             }

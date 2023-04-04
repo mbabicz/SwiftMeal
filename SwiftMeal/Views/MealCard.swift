@@ -13,34 +13,38 @@ struct MealCard: View {
     @StateObject private var imageLoader = ImageLoader()
     
     var body: some View {
-        HStack{
-            if imageLoader.image != nil {
-                HStack {
-                    Spacer()
+        ZStack{
+            HStack{
+                if imageLoader.image != nil {
                     Image(uiImage: imageLoader.image!)
                         .resizable()
                         .compositingGroup()
                         .aspectRatio(contentMode: .fit)
+                        .frame(width: 100)
                         .cornerRadius(12)
-
-                    Spacer()
+                }
+                Spacer()
+                VStack{
+                    Text(meal.strMeal)
+                        .font(.headline)
+                        .bold()
+                        .padding(.bottom, 10)
+                    Text(meal.ingredients.compactMap { $0 != "" ? $0 : nil }.joined(separator: ", "))
+                            .font(.caption2)
+                            .foregroundColor(.gray)
                 }
             }
-            VStack{
-                Text(meal.strMeal)
-                Text(meal.strCategory)
-
+            .padding()
+            .onAppear {
+                imageLoader.loadImage(with: meal.strMealThumb)
+            }
+            .onChange(of: meal) { newMeal in
+                imageLoader.loadImage(with: newMeal.strMealThumb)
             }
 
+            .background(Color(red: 240/255, green: 247/255, blue: 255/255))
         }
-        .onAppear {
-            imageLoader.loadImage(with: meal.strMealThumb)
-        }
+        .cornerRadius(20)
+        .padding([.leading, .trailing])
     }
 }
-
-//struct MealCard_Previews: PreviewProvider {
-//    static var previews: some View {
-//        MealCard()
-//    }
-//}

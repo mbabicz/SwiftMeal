@@ -11,7 +11,7 @@ struct MealsResponse: Codable {
     let meals: [Meal]
 }
 
-struct Meal: Codable {
+struct Meal: Codable, Equatable {
     let idMeal: String
     let strMeal: String
     let strCategory: String
@@ -60,5 +60,13 @@ struct Meal: Codable {
     let strMeasure18: String?
     let strMeasure19: String?
     let strMeasure20: String?
+    
+    var ingredients: [String] {
+        return [strIngredient1, strIngredient2, strIngredient3, strIngredient4, strIngredient5,
+                strIngredient6, strIngredient7, strIngredient8, strIngredient9, strIngredient10,
+                strIngredient11, strIngredient12, strIngredient13, strIngredient14, strIngredient15,
+                strIngredient16, strIngredient17, strIngredient18, strIngredient19, strIngredient20].compactMap { $0 }
+    }
+
     
 }
