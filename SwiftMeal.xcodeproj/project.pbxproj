@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		29211FD129DB6DC0000661FB /* SwiftMealApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29211FD029DB6DC0000661FB /* SwiftMealApp.swift */; };
-		29211FD329DB6DC0000661FB /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29211FD229DB6DC0000661FB /* ContentView.swift */; };
 		29211FD529DB6DC1000661FB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 29211FD429DB6DC1000661FB /* Assets.xcassets */; };
 		29211FD829DB6DC1000661FB /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 29211FD729DB6DC1000661FB /* Preview Assets.xcassets */; };
 		29211FE229DB6DC2000661FB /* SwiftMealTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29211FE129DB6DC2000661FB /* SwiftMealTests.swift */; };
@@ -16,6 +15,7 @@
 		29211FEE29DB6DC2000661FB /* SwiftMealUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29211FED29DB6DC2000661FB /* SwiftMealUITestsLaunchTests.swift */; };
 		2921201229DC4AC5000661FB /* Meal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2921201129DC4AC5000661FB /* Meal.swift */; };
 		2921201429DC4D4C000661FB /* MealViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2921201329DC4D4C000661FB /* MealViewModel.swift */; };
+		2921201629DC65D4000661FB /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2921201529DC65D4000661FB /* MainView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,7 +38,6 @@
 /* Begin PBXFileReference section */
 		29211FCD29DB6DC0000661FB /* SwiftMeal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftMeal.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		29211FD029DB6DC0000661FB /* SwiftMealApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftMealApp.swift; sourceTree = "<group>"; };
-		29211FD229DB6DC0000661FB /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		29211FD429DB6DC1000661FB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		29211FD729DB6DC1000661FB /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		29211FDD29DB6DC2000661FB /* SwiftMealTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftMealTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -48,6 +47,7 @@
 		29211FED29DB6DC2000661FB /* SwiftMealUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftMealUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		2921201129DC4AC5000661FB /* Meal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Meal.swift; sourceTree = "<group>"; };
 		2921201329DC4D4C000661FB /* MealViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealViewModel.swift; sourceTree = "<group>"; };
+		2921201529DC65D4000661FB /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,7 +102,6 @@
 				2921200F29DC4AAD000661FB /* ViewModels */,
 				2921200E29DC4A96000661FB /* Models */,
 				29211FD029DB6DC0000661FB /* SwiftMealApp.swift */,
-				29211FD229DB6DC0000661FB /* ContentView.swift */,
 				29211FD429DB6DC1000661FB /* Assets.xcassets */,
 				29211FD629DB6DC1000661FB /* Preview Content */,
 			);
@@ -153,6 +152,7 @@
 		2921201029DC4AB6000661FB /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				2921201529DC65D4000661FB /* MainView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -287,9 +287,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				29211FD329DB6DC0000661FB /* ContentView.swift in Sources */,
 				2921201429DC4D4C000661FB /* MealViewModel.swift in Sources */,
 				2921201229DC4AC5000661FB /* Meal.swift in Sources */,
+				2921201629DC65D4000661FB /* MainView.swift in Sources */,
 				29211FD129DB6DC0000661FB /* SwiftMealApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
