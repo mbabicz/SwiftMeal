@@ -60,4 +60,5 @@ struct Meal: Codable {
     let strMeasure18: String?
     let strMeasure19: String?
     let strMeasure20: String?
+    
 }

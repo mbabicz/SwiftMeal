@@ -10,14 +10,24 @@ import SwiftUI
 struct MainView: View {
     
     @ObservedObject var mealViewModel = MealViewModel()
+    
+    @State var searchText = ""
 
     var body: some View {
-        VStack{
-            Text(mealViewModel.meal?.strMeal ?? "")
+        NavigationView{
+            VStack{
+                if mealViewModel.meal != nil {
+                    MealCard(meal: (mealViewModel.meal!))
+                }
+            }
+//            VStack{
+//                Text(mealViewModel.meal?.strMeal ?? "")
+//            }
+            .onChange(of: searchText) { searchText in
+                mealViewModel.searchMealByName(name: searchText)
+            }
         }
-        .onAppear {
-            mealViewModel.searchMealByName(name: "pizza")
-        }
+        .searchable(text: $searchText)
     }
 }
 
