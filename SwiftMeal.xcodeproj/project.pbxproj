@@ -14,17 +14,6 @@
 		29211FE229DB6DC2000661FB /* SwiftMealTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29211FE129DB6DC2000661FB /* SwiftMealTests.swift */; };
 		29211FEC29DB6DC2000661FB /* SwiftMealUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29211FEB29DB6DC2000661FB /* SwiftMealUITests.swift */; };
 		29211FEE29DB6DC2000661FB /* SwiftMealUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29211FED29DB6DC2000661FB /* SwiftMealUITestsLaunchTests.swift */; };
-		29211FFF29DC1BF2000661FB /* Meal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29211FFE29DC1BF2000661FB /* Meal.swift */; };
-		2921200129DC1E73000661FB /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2921200029DC1E73000661FB /* MainView.swift */; };
-		2921200329DC2264000661FB /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2921200229DC2264000661FB /* GoogleService-Info.plist */; };
-		2921200429DC2264000661FB /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2921200229DC2264000661FB /* GoogleService-Info.plist */; };
-		2921200529DC2264000661FB /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2921200229DC2264000661FB /* GoogleService-Info.plist */; };
-		2921200B29DC2295000661FB /* MealsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2921200A29DC2295000661FB /* MealsViewModel.swift */; };
-		2921200C29DC2295000661FB /* MealsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2921200A29DC2295000661FB /* MealsViewModel.swift */; };
-		2921200D29DC2295000661FB /* MealsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2921200A29DC2295000661FB /* MealsViewModel.swift */; };
-		4C2ECAC85D3F78792E8279F0 /* Pods_SwiftMealTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B3E1C7901113FA0D6B3B3BD /* Pods_SwiftMealTests.framework */; };
-		996BBA763673893940D6BCDA /* Pods_SwiftMeal_SwiftMealUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D2CFBDD1E152B8B79BD2FB78 /* Pods_SwiftMeal_SwiftMealUITests.framework */; };
-		BC126487676B08F394FC6EB2 /* Pods_SwiftMeal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53B2FF61215ED96581E2E974 /* Pods_SwiftMeal.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,19 +44,6 @@
 		29211FE729DB6DC2000661FB /* SwiftMealUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftMealUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		29211FEB29DB6DC2000661FB /* SwiftMealUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftMealUITests.swift; sourceTree = "<group>"; };
 		29211FED29DB6DC2000661FB /* SwiftMealUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftMealUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		29211FFE29DC1BF2000661FB /* Meal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Meal.swift; sourceTree = "<group>"; };
-		2921200029DC1E73000661FB /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
-		2921200229DC2264000661FB /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		2921200A29DC2295000661FB /* MealsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealsViewModel.swift; sourceTree = "<group>"; };
-		459457CFAE5A4B9E77122294 /* Pods-SwiftMeal.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftMeal.debug.xcconfig"; path = "Target Support Files/Pods-SwiftMeal/Pods-SwiftMeal.debug.xcconfig"; sourceTree = "<group>"; };
-		4B3E1C7901113FA0D6B3B3BD /* Pods_SwiftMealTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftMealTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		53B2FF61215ED96581E2E974 /* Pods_SwiftMeal.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftMeal.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		7EFFD1C60DF095CFAE18A7D2 /* Pods-SwiftMealTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftMealTests.release.xcconfig"; path = "Target Support Files/Pods-SwiftMealTests/Pods-SwiftMealTests.release.xcconfig"; sourceTree = "<group>"; };
-		970E9534B27827FFDF5FE761 /* Pods-SwiftMealTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftMealTests.debug.xcconfig"; path = "Target Support Files/Pods-SwiftMealTests/Pods-SwiftMealTests.debug.xcconfig"; sourceTree = "<group>"; };
-		D2CFBDD1E152B8B79BD2FB78 /* Pods_SwiftMeal_SwiftMealUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftMeal_SwiftMealUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		D5125749C2C2949348A1D12E /* Pods-SwiftMeal-SwiftMealUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftMeal-SwiftMealUITests.debug.xcconfig"; path = "Target Support Files/Pods-SwiftMeal-SwiftMealUITests/Pods-SwiftMeal-SwiftMealUITests.debug.xcconfig"; sourceTree = "<group>"; };
-		E76CC449EAA25FC98920B85B /* Pods-SwiftMeal-SwiftMealUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftMeal-SwiftMealUITests.release.xcconfig"; path = "Target Support Files/Pods-SwiftMeal-SwiftMealUITests/Pods-SwiftMeal-SwiftMealUITests.release.xcconfig"; sourceTree = "<group>"; };
-		FD3CDC9EDC82D489C917ABFA /* Pods-SwiftMeal.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftMeal.release.xcconfig"; path = "Target Support Files/Pods-SwiftMeal/Pods-SwiftMeal.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,7 +51,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BC126487676B08F394FC6EB2 /* Pods_SwiftMeal.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -83,7 +58,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4C2ECAC85D3F78792E8279F0 /* Pods_SwiftMealTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -91,26 +65,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				996BBA763673893940D6BCDA /* Pods_SwiftMeal_SwiftMealUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		1EA79AEE8584718B80B84895 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				459457CFAE5A4B9E77122294 /* Pods-SwiftMeal.debug.xcconfig */,
-				FD3CDC9EDC82D489C917ABFA /* Pods-SwiftMeal.release.xcconfig */,
-				D5125749C2C2949348A1D12E /* Pods-SwiftMeal-SwiftMealUITests.debug.xcconfig */,
-				E76CC449EAA25FC98920B85B /* Pods-SwiftMeal-SwiftMealUITests.release.xcconfig */,
-				970E9534B27827FFDF5FE761 /* Pods-SwiftMealTests.debug.xcconfig */,
-				7EFFD1C60DF095CFAE18A7D2 /* Pods-SwiftMealTests.release.xcconfig */,
-			);
-			path = Pods;
-			sourceTree = "<group>";
-		};
 		29211FC429DB6DC0000661FB = {
 			isa = PBXGroup;
 			children = (
@@ -118,8 +78,6 @@
 				29211FE029DB6DC2000661FB /* SwiftMealTests */,
 				29211FEA29DB6DC2000661FB /* SwiftMealUITests */,
 				29211FCE29DB6DC0000661FB /* Products */,
-				1EA79AEE8584718B80B84895 /* Pods */,
-				83047BBB3CA6278C8E7BCC9E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -136,13 +94,9 @@
 		29211FCF29DB6DC0000661FB /* SwiftMeal */ = {
 			isa = PBXGroup;
 			children = (
-				29211FFD29DC1BA8000661FB /* Views */,
-				29211FFC29DC1B9C000661FB /* ViewModels */,
-				29211FFA29DC1B92000661FB /* Models */,
 				29211FD029DB6DC0000661FB /* SwiftMealApp.swift */,
 				29211FD229DB6DC0000661FB /* ContentView.swift */,
 				29211FD429DB6DC1000661FB /* Assets.xcassets */,
-				2921200229DC2264000661FB /* GoogleService-Info.plist */,
 				29211FD629DB6DC1000661FB /* Preview Content */,
 			);
 			path = SwiftMeal;
@@ -173,40 +127,6 @@
 			path = SwiftMealUITests;
 			sourceTree = "<group>";
 		};
-		29211FFA29DC1B92000661FB /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				29211FFE29DC1BF2000661FB /* Meal.swift */,
-			);
-			path = Models;
-			sourceTree = "<group>";
-		};
-		29211FFC29DC1B9C000661FB /* ViewModels */ = {
-			isa = PBXGroup;
-			children = (
-				2921200A29DC2295000661FB /* MealsViewModel.swift */,
-			);
-			path = ViewModels;
-			sourceTree = "<group>";
-		};
-		29211FFD29DC1BA8000661FB /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				2921200029DC1E73000661FB /* MainView.swift */,
-			);
-			path = Views;
-			sourceTree = "<group>";
-		};
-		83047BBB3CA6278C8E7BCC9E /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				53B2FF61215ED96581E2E974 /* Pods_SwiftMeal.framework */,
-				D2CFBDD1E152B8B79BD2FB78 /* Pods_SwiftMeal_SwiftMealUITests.framework */,
-				4B3E1C7901113FA0D6B3B3BD /* Pods_SwiftMealTests.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -214,11 +134,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 29211FF129DB6DC2000661FB /* Build configuration list for PBXNativeTarget "SwiftMeal" */;
 			buildPhases = (
-				F8BF9B5A52E585CEF25F1B46 /* [CP] Check Pods Manifest.lock */,
 				29211FC929DB6DC0000661FB /* Sources */,
 				29211FCA29DB6DC0000661FB /* Frameworks */,
 				29211FCB29DB6DC0000661FB /* Resources */,
-				4D8A82E54985E91DE0F0214D /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -233,11 +151,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 29211FF429DB6DC2000661FB /* Build configuration list for PBXNativeTarget "SwiftMealTests" */;
 			buildPhases = (
-				F3C64DEC61331EBB7FAD3A60 /* [CP] Check Pods Manifest.lock */,
 				29211FD929DB6DC2000661FB /* Sources */,
 				29211FDA29DB6DC2000661FB /* Frameworks */,
 				29211FDB29DB6DC2000661FB /* Resources */,
-				46698C924FA394BB5A669648 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -253,11 +169,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 29211FF729DB6DC2000661FB /* Build configuration list for PBXNativeTarget "SwiftMealUITests" */;
 			buildPhases = (
-				E61A49150346C4C834976F78 /* [CP] Check Pods Manifest.lock */,
 				29211FE329DB6DC2000661FB /* Sources */,
 				29211FE429DB6DC2000661FB /* Frameworks */,
 				29211FE529DB6DC2000661FB /* Resources */,
-				68E20ED673AB4075B22CC52E /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -318,7 +232,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				29211FD829DB6DC1000661FB /* Preview Assets.xcassets in Resources */,
-				2921200329DC2264000661FB /* GoogleService-Info.plist in Resources */,
 				29211FD529DB6DC1000661FB /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -327,7 +240,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2921200429DC2264000661FB /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -335,131 +247,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2921200529DC2264000661FB /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		46698C924FA394BB5A669648 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-SwiftMealTests/Pods-SwiftMealTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-SwiftMealTests/Pods-SwiftMealTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SwiftMealTests/Pods-SwiftMealTests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		4D8A82E54985E91DE0F0214D /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-SwiftMeal/Pods-SwiftMeal-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-SwiftMeal/Pods-SwiftMeal-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SwiftMeal/Pods-SwiftMeal-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		68E20ED673AB4075B22CC52E /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-SwiftMeal-SwiftMealUITests/Pods-SwiftMeal-SwiftMealUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-SwiftMeal-SwiftMealUITests/Pods-SwiftMeal-SwiftMealUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SwiftMeal-SwiftMealUITests/Pods-SwiftMeal-SwiftMealUITests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		E61A49150346C4C834976F78 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-SwiftMeal-SwiftMealUITests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		F3C64DEC61331EBB7FAD3A60 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-SwiftMealTests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		F8BF9B5A52E585CEF25F1B46 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-SwiftMeal-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		29211FC929DB6DC0000661FB /* Sources */ = {
@@ -467,9 +258,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				29211FD329DB6DC0000661FB /* ContentView.swift in Sources */,
-				2921200129DC1E73000661FB /* MainView.swift in Sources */,
-				29211FFF29DC1BF2000661FB /* Meal.swift in Sources */,
-				2921200B29DC2295000661FB /* MealsViewModel.swift in Sources */,
 				29211FD129DB6DC0000661FB /* SwiftMealApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -479,7 +267,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				29211FE229DB6DC2000661FB /* SwiftMealTests.swift in Sources */,
-				2921200C29DC2295000661FB /* MealsViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -489,7 +276,6 @@
 			files = (
 				29211FEC29DB6DC2000661FB /* SwiftMealUITests.swift in Sources */,
 				29211FEE29DB6DC2000661FB /* SwiftMealUITestsLaunchTests.swift in Sources */,
-				2921200D29DC2295000661FB /* MealsViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -625,7 +411,6 @@
 		};
 		29211FF229DB6DC2000661FB /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 459457CFAE5A4B9E77122294 /* Pods-SwiftMeal.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -655,7 +440,6 @@
 		};
 		29211FF329DB6DC2000661FB /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = FD3CDC9EDC82D489C917ABFA /* Pods-SwiftMeal.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -685,7 +469,6 @@
 		};
 		29211FF529DB6DC2000661FB /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 970E9534B27827FFDF5FE761 /* Pods-SwiftMealTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -706,7 +489,6 @@
 		};
 		29211FF629DB6DC2000661FB /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7EFFD1C60DF095CFAE18A7D2 /* Pods-SwiftMealTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -727,7 +509,6 @@
 		};
 		29211FF829DB6DC2000661FB /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D5125749C2C2949348A1D12E /* Pods-SwiftMeal-SwiftMealUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -746,7 +527,6 @@
 		};
 		29211FF929DB6DC2000661FB /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E76CC449EAA25FC98920B85B /* Pods-SwiftMeal-SwiftMealUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
