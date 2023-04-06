@@ -17,7 +17,9 @@ struct MainView: View {
         NavigationView{
             VStack{
                 if mealViewModel.meal != nil {
-                    MealCard(meal: (mealViewModel.meal!))
+                    NavigationLink(destination: MealDetailsView(meal: (mealViewModel.meal!))){
+                        MealCard(meal: (mealViewModel.meal!))
+                    }
                 }
                 Spacer()
             }

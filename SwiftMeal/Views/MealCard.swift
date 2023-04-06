@@ -32,6 +32,9 @@ struct MealCard: View {
                     Text(meal.ingredients.compactMap { $0 != "" ? $0 : nil }.joined(separator: ", "))
                             .font(.caption2)
                             .foregroundColor(.gray)
+
+
+
                 }
             }
             .padding()
