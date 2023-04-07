@@ -28,43 +28,48 @@ struct MainView: View {
     
     @ObservedObject var mealViewModel = MealViewModel()
     
-    @State var searchText = ""
-    @State var selectedCategory: Category = .Beef
-
+    @State private var searchText = ""
+    @State private var selectedCategory: Category = .Beef
+    
     var body: some View {
         NavigationView{
             VStack(alignment: .leading, spacing: 0){
-                if mealViewModel.meal != nil {
-                    NavigationLink(destination: MealDetailsView(meal: (mealViewModel.meal!))){
-                        MealCard(meal: (mealViewModel.meal!))
-                    }
-                }
-                Text("Categories")
-                    .padding(.horizontal, 20)
-                    .font(.title)
-                    .bold()
-                
-                ScrollView(.horizontal, showsIndicators: false) {
-                    HStack(spacing: 10) {
-                        ForEach(Category.allCases, id: \.self) { category in
-                            Button(action: {
-                                self.selectedCategory = category
-                            }) {
-                                Text(category.rawValue)
-                                    .font(.callout)
-                                    .foregroundColor(category == selectedCategory ? .white : .black)
-                                    .padding(.vertical, 10)
-                                    .padding(.horizontal, 20)
-                                    .background(category == selectedCategory ? Color.blue : Color.gray.opacity(0.4))
-                                    .cornerRadius(25)
-                            }
+                if searchText != "" {
+                    if let meal = mealViewModel.meal {
+                        NavigationLink(destination: MealDetailsView(meal: meal)){
+                            MealCard(meal: meal)
                         }
                     }
-                    .padding(.horizontal)
+                } else {
+                    Text("Categories")
+                        .font(.title)
+                        .bold()
+                        .padding(.horizontal, 20)
                     
-                    Spacer()
+                    ScrollView(.horizontal, showsIndicators: false) {
+                        HStack(spacing: 10) {
+                            ForEach(Category.allCases, id: \.self) { category in
+                                Button(action: {
+                                    selectedCategory = category
+                                    mealViewModel.searchMealByCategory(name: category.rawValue)
+                                }) {
+                                    Text(category.rawValue)
+                                        .font(.callout)
+                                        .foregroundColor(selectedCategory == category ? .white : .black)
+                                        .padding(.vertical, 10)
+                                        .padding(.horizontal, 20)
+                                        .background(selectedCategory == category ? Color.blue : Color.gray.opacity(0.4))
+                                        .cornerRadius(25)
+                                }
+                            }
+                        }
+                        .padding(.horizontal)
+                        
+                        Spacer()
+                    }
+                    .padding(.vertical, 10)
                 }
-                .padding(.vertical, 10)
+                
             }
             .onChange(of: searchText) { searchText in
                 mealViewModel.searchMealByName(name: searchText)
