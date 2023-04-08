@@ -25,7 +25,7 @@ struct MealCard: View {
                 }
                 Spacer()
                 VStack{
-                    Text(meal.strMeal)
+                    Text(meal.name)
                         .font(.headline)
                         .bold()
                         .padding(.bottom, 10)
@@ -39,11 +39,11 @@ struct MealCard: View {
             }
             .padding()
             .onAppear {
-                imageLoader.loadImage(with: meal.strMealThumb)
+                imageLoader.loadImage(with: meal.imageURL)
             }
-            .onChange(of: meal) { newMeal in
-                imageLoader.loadImage(with: newMeal.strMealThumb)
-            }
+//            .onChange(of: meal) { newMeal in
+//                imageLoader.loadImage(with: newMeal.strMealThumb)
+//            }
 
             .background(Color(red: 240/255, green: 247/255, blue: 255/255))
         }

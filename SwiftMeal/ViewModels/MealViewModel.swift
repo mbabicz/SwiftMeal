@@ -6,62 +6,44 @@
 //
 
 import Foundation
+import FirebaseFirestore
+import Firebase
 
 class MealViewModel: ObservableObject {
-    @Published var meal: Meal?
-    @Published var mealByCategory: Meal?
+    @Published var meals: [Meal]?
+    private let db = Firestore.firestore()
     
-    func searchMealByName(name: String) {
-        guard let url = URL(string: "https://www.themealdb.com/api/json/v1/1/search.php?s=\(name)") else {
-            print("Invalid URL")
-            return
-        }
+    
+    func fetchMeals(){
+        self.meals = nil
         
-        URLSession.shared.dataTask(with: url) { data, response, error in
-            guard let data = data, error == nil else {
-                print("Error: \(error?.localizedDescription ?? "Unknown error")")
+        print("fetching")
+        
+        db.collection("Meals").getDocuments { snapshot, error in
+            guard error == nil else {
+                print("Error: can't get meals from database")
                 return
             }
-            
-            do {
-                let decoder = JSONDecoder()
-                decoder.keyDecodingStrategy = .convertFromSnakeCase
-                let response = try decoder.decode(MealsResponse.self, from: data)
+            guard let snapshot = snapshot else { return }
+            DispatchQueue.main.async {
                 
-                DispatchQueue.main.async {
-                    self.meal = response.meals.first
+                self.meals = snapshot.documents.compactMap { doc -> Meal? in
+                    let name = doc["name"] as? String ?? ""
+                    let id = doc.documentID
+                    let img = doc["img"] as? String ?? ""
+                    let price = doc["price"] as? Double ?? 0
+                    let description = doc["description"] as? String ?? ""
+                    let category = doc["category"] as? String ?? ""
+                    let ingredients = doc["details"] as? [String] ?? []
+                    
+                    print(Meal(id: id, name: name, description: description, price: price, img: img, ingredients: ingredients, category: category))
+                    
+                    return Meal(id: id, name: name, description: description, price: price, img: img, ingredients: ingredients, category: category)
+
+
                 }
-                
-            } catch let error {
-                print("Error decoding JSON: \(error.localizedDescription)")
             }
-        }.resume()
-    }
-    
-    func searchMealByCategory(name: String) {
-        guard let url = URL(string: "https://www.themealdb.com/api/json/v1/1/categories.php") else {
-            print("Invalid URL")
-            return
+            
         }
-        
-        URLSession.shared.dataTask(with: url) { data, response, error in
-            guard let data = data, error == nil else {
-                print("Error: \(error?.localizedDescription ?? "Unknown error")")
-                return
-            }
-            
-            do {
-                let decoder = JSONDecoder()
-                decoder.keyDecodingStrategy = .convertFromSnakeCase
-                let response = try decoder.decode(MealsResponse.self, from: data)
-                
-                DispatchQueue.main.async {
-                    self.mealByCategory = response.meals.first
-                }
-                
-            } catch let error {
-                print("Error decoding JSON: \(error.localizedDescription)")
-            }
-        }.resume()
     }
 }
