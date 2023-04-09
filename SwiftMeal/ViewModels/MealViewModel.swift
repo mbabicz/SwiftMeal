@@ -16,9 +16,6 @@ class MealViewModel: ObservableObject {
     
     func fetchMeals(){
         self.meals = nil
-        
-        print("fetching")
-        
         db.collection("Meals").getDocuments { snapshot, error in
             guard error == nil else {
                 print("Error: can't get meals from database")
@@ -35,8 +32,6 @@ class MealViewModel: ObservableObject {
                     let description = doc["description"] as? String ?? ""
                     let category = doc["category"] as? String ?? ""
                     let ingredients = doc["details"] as? [String] ?? []
-                    
-                    print(Meal(id: id, name: name, description: description, price: price, img: img, ingredients: ingredients, category: category))
                     
                     return Meal(id: id, name: name, description: description, price: price, img: img, ingredients: ingredients, category: category)
 

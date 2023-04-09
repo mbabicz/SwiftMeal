@@ -16,9 +16,6 @@ struct MealDetailsView: View {
         NavigationView{
             ScrollView{
                 HStack(spacing: 0){
-//                    Text(meal.strArea)
-//                        .font(.footnote)
-//                        .foregroundColor(.gray)
                     Spacer()
                     Text(meal.category)
                         .font(.footnote)

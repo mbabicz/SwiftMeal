@@ -10,45 +10,56 @@ import SwiftUI
 
 enum Category: String, CaseIterable {
     case all = "All"
-    case Beef = "Beef"
-    case Chicken = "Chicken"
-    case Dessert = "Dessert"
-    case Lamb = "Lamb"
-    case Miscellaneous = "Miscellaneous"
-    case Pasta = "Pasta"
-    case Pork = "Pork"
-    case Seafood = "Seafood"
-    case Side = "Side"
-    case Starter = "Starter"
-    case Vegan = "Vegan"
-    case Vegetarian = "Vegetarian"
-    case Breakfast = "Breakfast"
-    case Goat = "Goat"
+    case burgers = "Burgers"
+    case pizza = "Pizza"
+    case additives = "Additives"
+    case drinks = "Drinks"
+
 }
 
 struct MainView: View {
     
     @ObservedObject var mealViewModel = MealViewModel()
     
-    @State private var searchText = ""
     @State private var selectedCategory: Category = .all
+    
+    var filteredMeals: [Meal] {
+        if selectedCategory == .all {
+            return mealViewModel.meals ?? []
+        } else {
+            return mealViewModel.meals?.filter { $0.category == selectedCategory.rawValue.lowercased() } ?? []
+        }
+    }
+
     
     var body: some View {
         NavigationView{
-            VStack(alignment: .leading, spacing: 0){
-                if mealViewModel.meals != nil{
-                    ForEach(mealViewModel.meals!, id: \.self){ meal in
-                        NavigationLink(destination: MealDetailsView(meal: meal)){
-                            MealCard(meal: meal)
+            ScrollView{
+                    Picker(selection: $selectedCategory, label: Text("Select a category")) {
+                        ForEach(Category.allCases, id: \.self) { category in
+                            Text(category.rawValue).tag(category)
                         }
                     }
-                }
+                    .pickerStyle(SegmentedPickerStyle())
+                    .padding()
+                    
+                    if mealViewModel.meals != nil {
+                        LazyVGrid(columns: [
+                            GridItem(.flexible()),
+                            GridItem(.flexible())
+                        ], spacing: 10) {
+                            ForEach(filteredMeals, id: \.self) { meal in
+                                NavigationLink(destination: MealDetailsView(meal: meal)) {
+                                    MealCard(meal: meal)
+                                }
+                            }
+                        }
+                    }
             }
             .onAppear{
                 mealViewModel.fetchMeals()
             }
         }
-        .searchable(text: $searchText)
     }
 }
 

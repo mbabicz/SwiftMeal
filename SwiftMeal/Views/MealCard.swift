@@ -14,7 +14,7 @@ struct MealCard: View {
     
     var body: some View {
         ZStack{
-            HStack{
+            VStack{
                 if imageLoader.image != nil {
                     Image(uiImage: imageLoader.image!)
                         .resizable()
@@ -23,31 +23,20 @@ struct MealCard: View {
                         .frame(width: 100)
                         .cornerRadius(12)
                 }
-                Spacer()
-                VStack{
-                    Text(meal.name)
-                        .font(.headline)
-                        .bold()
-                        .padding(.bottom, 10)
-                    Text(meal.ingredients.compactMap { $0 != "" ? $0 : nil }.joined(separator: ", "))
-                            .font(.caption2)
-                            .foregroundColor(.gray)
-
-
-
-                }
+                Text(meal.name)
+                    .font(.headline)
+                    .bold()
+                    .padding(.bottom, 10)
             }
+            .frame(maxWidth: .infinity)
+            .frame(height: 100)
+
             .padding()
             .onAppear {
                 imageLoader.loadImage(with: meal.imageURL)
             }
-//            .onChange(of: meal) { newMeal in
-//                imageLoader.loadImage(with: newMeal.strMealThumb)
-//            }
-
             .background(Color(red: 240/255, green: 247/255, blue: 255/255))
         }
         .cornerRadius(20)
-        .padding([.leading, .trailing])
     }
 }
