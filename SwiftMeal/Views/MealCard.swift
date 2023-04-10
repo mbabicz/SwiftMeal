@@ -25,7 +25,7 @@ struct MealCard: View {
                         Text(meal.name)
                             .font(.headline)
                             .bold()
-                            .padding(.top, 10)
+                            .padding(.top, 15)
                             .padding(.horizontal, 10)
                             .foregroundColor(.black)
                             .multilineTextAlignment(.center)
@@ -35,7 +35,7 @@ struct MealCard: View {
                                 .resizable()
                                 .compositingGroup()
                                 .aspectRatio(contentMode: .fit)
-                                .frame(width: 100)
+                                .frame(height: 75)
                                 .cornerRadius(20)
                         }
                         Text(meal.formattedPrice)
@@ -56,7 +56,7 @@ struct MealCard: View {
                                 .background(Color.green)
                                 .cornerRadius(45)
                         }
-                        .padding(.bottom, 10)
+                        .padding(.bottom, 20)
 
     
                     })
