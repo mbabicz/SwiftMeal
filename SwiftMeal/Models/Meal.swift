@@ -20,4 +20,8 @@ struct Meal: Identifiable, Hashable {
         URL(string: img)!
     }
     
+    var formattedPrice : String{
+        return String(format: "%.2f$", price)
+    }
+    
 }

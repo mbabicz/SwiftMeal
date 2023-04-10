@@ -47,10 +47,11 @@ struct MainView: View {
                         LazyVGrid(columns: [
                             GridItem(.flexible()),
                             GridItem(.flexible())
-                        ], spacing: 10) {
+                        ], spacing: 0) {
                             ForEach(filteredMeals, id: \.self) { meal in
                                 NavigationLink(destination: MealDetailsView(meal: meal)) {
                                     MealCard(meal: meal)
+                                        .padding(10)
                                 }
                             }
                         }

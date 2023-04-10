@@ -14,29 +14,60 @@ struct MealCard: View {
     
     var body: some View {
         ZStack{
-            VStack{
-                if imageLoader.image != nil {
-                    Image(uiImage: imageLoader.image!)
-                        .resizable()
-                        .compositingGroup()
-                        .aspectRatio(contentMode: .fit)
-                        .frame(width: 100)
-                        .cornerRadius(12)
-                }
-                Text(meal.name)
-                    .font(.headline)
-                    .bold()
-                    .padding(.bottom, 10)
-            }
-            .frame(maxWidth: .infinity)
-            .frame(height: 100)
+            Rectangle()
+                .fill(Color.white)
+            //.frame(width: 195, height: 320, alignment: .center)
+                .frame(maxWidth: .infinity)
+                .frame(height: 200)
+                .cornerRadius(15)
+                .overlay(
+                    VStack{
+                        Text(meal.name)
+                            .font(.headline)
+                            .bold()
+                            .padding(.top, 10)
+                            .padding(.horizontal, 10)
+                            .foregroundColor(.black)
+                            .multilineTextAlignment(.center)
+                            .lineLimit(3)
+                        if imageLoader.image != nil {
+                            Image(uiImage: imageLoader.image!)
+                                .resizable()
+                                .compositingGroup()
+                                .aspectRatio(contentMode: .fit)
+                                .frame(width: 100)
+                                .cornerRadius(20)
+                        }
+                        Text(meal.formattedPrice)
+                            .font(.subheadline)
+                            .foregroundColor(.black)
+                        
+                        Button {
 
-            .padding()
-            .onAppear {
-                imageLoader.loadImage(with: meal.imageURL)
-            }
-            .background(Color(red: 240/255, green: 247/255, blue: 255/255))
+                        } label: {
+                            HStack() {
+                                   Image(systemName: "cart.badge.plus")
+                                    .bold().font(.caption)
+                                   Text("Add to cart")
+                                    .bold().font(.caption)
+                               }
+                                .padding(8)
+                                .foregroundColor(.white)
+                                .background(Color.green)
+                                .cornerRadius(45)
+                        }
+                        .padding(.bottom, 10)
+
+    
+                    })
+            
+                .cornerRadius(12)
+                .shadow(color: .gray, radius: 4, x: /*@START_MENU_TOKEN@*/0.0/*@END_MENU_TOKEN@*/, y: /*@START_MENU_TOKEN@*/0.0/*@END_MENU_TOKEN@*/)
+            
+                .onAppear {
+                    imageLoader.loadImage(with: meal.imageURL)
+                }
         }
-        .cornerRadius(20)
+        
     }
 }
