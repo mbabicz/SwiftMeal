@@ -16,7 +16,6 @@ struct MealCard: View {
         ZStack{
             Rectangle()
                 .fill(Color.white)
-            //.frame(width: 195, height: 320, alignment: .center)
                 .frame(maxWidth: .infinity)
                 .frame(height: 200)
                 .cornerRadius(15)
