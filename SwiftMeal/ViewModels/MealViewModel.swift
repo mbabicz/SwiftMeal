@@ -12,6 +12,7 @@ import Firebase
 class MealViewModel: ObservableObject {
     @Published var meals: [Meal]?
     private let db = Firestore.firestore()
+    private let defaultImage = "https://firebasestorage.googleapis.com/v0/b/swiftmeal-26927.appspot.com/o/pl-default-home_default.jpg?alt=media&token=e55410a7-d06f-4d9d-aebf-41eacb504642"
     
     
     func fetchMeals(){
@@ -27,7 +28,7 @@ class MealViewModel: ObservableObject {
                 self.meals = snapshot.documents.compactMap { doc -> Meal? in
                     let name = doc["name"] as? String ?? ""
                     let id = doc.documentID
-                    let img = doc["img"] as? String ?? ""
+                    let img = doc["img"] as? String ?? self.defaultImage
                     let price = doc["price"] as? Double ?? 0
                     let description = doc["description"] as? String ?? ""
                     let category = doc["category"] as? String ?? ""
