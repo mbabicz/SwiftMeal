@@ -28,61 +28,61 @@ struct MealDetailsView: View {
                     .padding()
                 
             }
-            Rectangle()
-                .fill(Color.white)
-                .frame(maxWidth: .infinity)
-                .frame(height: 250)
-                .overlay(
-                    VStack{
-                        Text("Meal category: \(meal.category)")
-                            .font(.footnote)
-                            .frame(maxWidth: .infinity, alignment: .leading)
-                            .padding([.horizontal, .top])
-//
-                        Text("Ingredients: \(meal.ingredients.joined(separator: ", "))")
-                            .font(.footnote)
-                            .frame(maxWidth: .infinity, alignment: .leading)
-                            .padding([.horizontal, .bottom])
-                        
-                        Text(meal.description)
-                            .font(.body)
-                            .padding([.horizontal ,.bottom])
+            ZStack{
+                RoundedRectangle(cornerRadius: 25, style: .continuous)
+                    .fill(.white)
+                    .shadow(radius: 10)
+                VStack{
+                    Text(meal.description)
+                        .font(.headline)
+                        .padding(10)
+                        .multilineTextAlignment(.center)
+                        .fixedSize(horizontal: false, vertical: true)
+                    
+                    Text("Meal category: \(meal.category)")
+                        .font(.footnote)
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                        .padding(.horizontal)
 
-                        HStack(alignment: .center){
-                            Text(meal.formattedPrice)
-                                .font(.headline)
-                                .padding(.trailing, 20)
+                    Text("Ingredients: \(meal.ingredients.joined(separator: ", "))")
+                        .font(.footnote)
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                        .padding([.horizontal, .bottom])
+                    
+                    
+                    Text(verbatim: meal.nutrition.joined(separator: "\n\t• "))
+                        .font(.footnote)
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                        .padding(.horizontal)
+                    
+                    HStack(alignment: .center){
+                        Text(meal.formattedPrice)
+                            .font(.headline)
+                            .padding(.trailing, 20)
+                        
+                        Button {
                             
-                            Button {
-
-                            } label: {
-                                HStack() {
-                                       Image(systemName: "cart.badge.plus")
-                                        .bold().font(.caption)
-                                       Text("Add to cart")
-                                        .bold().font(.caption)
-                                   }
-                                    .padding(8)
-                                    .foregroundColor(.white)
-                                    .background(Color.green)
-                                    .cornerRadius(45)
+                        } label: {
+                            HStack() {
+                                Image(systemName: "cart.badge.plus")
+                                    .bold().font(.callout)
+                                Text("Add to cart")
+                                    .bold().font(.callout)
                             }
-                            .padding(.leading, 20)
-
-                            //.padding(20)
+                            .padding(8)
+                            .foregroundColor(.white)
+                            .background(Color.green)
+                            .cornerRadius(45)
                         }
-                        Spacer()
-                        
+                        .padding(.leading, 20)
                     }
-                )
-                .cornerRadius(12)
-                .shadow(color: .gray, radius: 4, x: /*@START_MENU_TOKEN@*/0.0/*@END_MENU_TOKEN@*/, y: /*@START_MENU_TOKEN@*/0.0/*@END_MENU_TOKEN@*/)
-                .padding(5)
-            
-            
+                    .padding(.top)
+
+                    Spacer()
+                }
+            }
             Spacer()
         }
-        .padding([.leading, .trailing], 10)
         .onAppear {
             imageLoader.loadImage(with: meal.imageURL)
         }

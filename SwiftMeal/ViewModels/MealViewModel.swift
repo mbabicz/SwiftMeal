@@ -33,8 +33,10 @@ class MealViewModel: ObservableObject {
                     let description = doc["description"] as? String ?? ""
                     let category = doc["category"] as? String ?? ""
                     let ingredients = doc["ingredients"] as? [String] ?? []
+                    let nutrition = doc["nutrition"] as? [String] ?? []
+
                     
-                    return Meal(id: id, name: name, description: description, price: price, img: img, ingredients: ingredients, category: category)
+                    return Meal(id: id, name: name, description: description, price: price, img: img, ingredients: ingredients, nutrition: nutrition, category: category)
 
 
                 }

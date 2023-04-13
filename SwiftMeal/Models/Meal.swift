@@ -14,6 +14,7 @@ struct Meal: Identifiable, Hashable {
     var price: Double
     var img: String
     var ingredients: [String]
+    var nutrition: [String]
     var category: String
     
     var imageURL: URL {
