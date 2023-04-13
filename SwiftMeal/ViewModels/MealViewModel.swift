@@ -14,7 +14,6 @@ class MealViewModel: ObservableObject {
     private let db = Firestore.firestore()
     private let defaultImage = "https://firebasestorage.googleapis.com/v0/b/swiftmeal-26927.appspot.com/o/pl-default-home_default.jpg?alt=media&token=e55410a7-d06f-4d9d-aebf-41eacb504642"
     
-    
     func fetchMeals(){
         self.meals = nil
         db.collection("Meals").getDocuments { snapshot, error in
@@ -35,13 +34,9 @@ class MealViewModel: ObservableObject {
                     let ingredients = doc["ingredients"] as? [String] ?? []
                     let nutrition = doc["nutrition"] as? [String] ?? []
 
-                    
                     return Meal(id: id, name: name, description: description, price: price, img: img, ingredients: ingredients, nutrition: nutrition, category: category)
-
-
                 }
             }
-            
         }
     }
 }
