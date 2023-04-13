@@ -56,7 +56,7 @@ struct MainView: View {
             .onAppear{
                 mealViewModel.fetchMeals()
             }
-        }
+        }.accentColor(.black)
     }
 }
 

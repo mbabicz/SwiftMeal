@@ -26,7 +26,6 @@ struct MealDetailsView: View {
                     .frame(maxWidth: 200)
                     .cornerRadius(12)
                     .padding()
-                
             }
             ZStack{
                 RoundedRectangle(cornerRadius: 25, style: .continuous)
@@ -43,12 +42,11 @@ struct MealDetailsView: View {
                         .font(.footnote)
                         .frame(maxWidth: .infinity, alignment: .leading)
                         .padding(.horizontal)
-
+                    
                     Text("Ingredients: \(meal.ingredients.joined(separator: ", "))")
                         .font(.footnote)
                         .frame(maxWidth: .infinity, alignment: .leading)
                         .padding([.horizontal, .bottom])
-                    
                     
                     Text(verbatim: meal.nutrition.joined(separator: "\n\t• "))
                         .font(.footnote)
@@ -77,7 +75,6 @@ struct MealDetailsView: View {
                         .padding(.leading, 20)
                     }
                     .padding(.top)
-
                     Spacer()
                 }
             }
