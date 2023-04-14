@@ -17,7 +17,7 @@ enum Category: String, CaseIterable {
 
 struct MainView: View {
     
-    @ObservedObject var mealViewModel = MealViewModel()
+    @EnvironmentObject var mealViewModel: MealViewModel
     @State private var selectedCategory: Category = .all
     
     var filteredMeals: [Meal] {
@@ -30,25 +30,50 @@ struct MainView: View {
     
     var body: some View {
         NavigationView{
-            ScrollView{
-                Picker(selection: $selectedCategory, label: Text("Select a category")) {
-                    ForEach(Category.allCases, id: \.self) { category in
-                        Text(category.rawValue).tag(category)
+            ZStack{
+                ScrollView{
+                    Picker(selection: $selectedCategory, label: Text("Select a category")) {
+                        ForEach(Category.allCases, id: \.self) { category in
+                            Text(category.rawValue).tag(category)
+                        }
+                    }
+                    .pickerStyle(SegmentedPickerStyle())
+                    .padding()
+                    
+                    if mealViewModel.meals != nil {
+                        LazyVGrid(columns: [
+                            GridItem(.flexible()),
+                            GridItem(.flexible())
+                        ], spacing: 0) {
+                            ForEach(filteredMeals, id: \.self) { meal in
+                                NavigationLink(destination: MealDetailsView(meal: meal)) {
+                                    MealCard(meal: meal)
+                                        .padding(10)
+                                }
+                            }
+                        }
+                        .padding(.bottom, 35)
                     }
                 }
-                .pickerStyle(SegmentedPickerStyle())
-                .padding()
-                
-                if mealViewModel.meals != nil {
-                    LazyVGrid(columns: [
-                        GridItem(.flexible()),
-                        GridItem(.flexible())
-                    ], spacing: 0) {
-                        ForEach(filteredMeals, id: \.self) { meal in
-                            NavigationLink(destination: MealDetailsView(meal: meal)) {
-                                MealCard(meal: meal)
-                                    .padding(10)
+                VStack(){
+                    Spacer()
+                    
+                    if !mealViewModel.cartMealsID.isEmpty {
+                        Button {
+                            
+                        } label: {
+                            HStack() {
+                                Image(systemName: "cart.fill")
+                                    .bold().font(.callout)
+                                Text("Go to cart: \(mealViewModel.cartMealsID.count) item")
+                                    .bold().font(.callout)
                             }
+                            .padding(8)
+                            .foregroundColor(.white)
+                            .background(Color.purple)
+                            .cornerRadius(45)
+                            .shadow(radius: 10)
+                            
                         }
                     }
                 }

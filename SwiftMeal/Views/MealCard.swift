@@ -11,6 +11,7 @@ struct MealCard: View {
     
     var meal: Meal
     @StateObject private var imageLoader = ImageLoader()
+    @EnvironmentObject var mealViewModel: MealViewModel
     
     var body: some View {
         ZStack{
@@ -40,7 +41,7 @@ struct MealCard: View {
                     .foregroundColor(.black)
                 
                 Button {
-                    
+                    mealViewModel.addToCart(meal.id)
                 } label: {
                     HStack() {
                         Image(systemName: "cart.badge.plus")
