@@ -64,7 +64,7 @@ struct MainView: View {
                             HStack() {
                                 Image(systemName: "cart.fill")
                                     .bold().font(.callout)
-                                Text("Go to cart: \(cartCount) items")
+                                Text("Go to cart: \(String(format: "%.2f", mealViewModel.totalCartPrice))$")
                                     .bold().font(.callout)
                             }
                             .padding(8)

@@ -12,6 +12,7 @@ import Firebase
 class MealViewModel: ObservableObject {
     @Published var meals: [Meal]?
     @Published var cartMeals: [Meal: Int] = [:]
+    @Published var totalCartPrice = 0.0
     private let db = Firestore.firestore()
     private let defaultImage = "https://firebasestorage.googleapis.com/v0/b/swiftmeal-26927.appspot.com/o/pl-default-home_default.jpg?alt=media&token=e55410a7-d06f-4d9d-aebf-41eacb504642"
     
@@ -48,8 +49,16 @@ class MealViewModel: ObservableObject {
             } else {
                 cartMeals[meal] = 1
             }
-            print("dodaje produkt \(meal) \(String(describing: cartMeals))")
+            self.calculateTotalPrice()
         }
+    }
+    
+    func calculateTotalPrice(){
+        var totalPrice = 0.0
+        for (meal, count) in cartMeals{
+            totalPrice += meal.price * Double(count)
+        }
+        self.totalCartPrice = totalPrice
     }
 
 }
