@@ -42,12 +42,12 @@ class MealViewModel: ObservableObject {
         }
     }
 
-    func addToCart(_ productID: String) {
+    func addToCart(_ productID: String, _ quantity: Int) {
         if let meal = meals?.first(where: { $0.id == productID }) {
             if let count = cartMeals[meal] {
-                cartMeals[meal] = count + 1
+                cartMeals[meal] = count + quantity
             } else {
-                cartMeals[meal] = 1
+                cartMeals[meal] = quantity
             }
             self.calculateTotalPrice()
         }

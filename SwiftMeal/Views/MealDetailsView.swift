@@ -12,6 +12,7 @@ struct MealDetailsView: View {
     var meal: Meal
     @StateObject private var imageLoader = ImageLoader()
     @EnvironmentObject var mealViewModel: MealViewModel
+    @State private var stepperValue = 1
     
     var body: some View {
         ZStack{
@@ -19,7 +20,10 @@ struct MealDetailsView: View {
                 Text(meal.name)
                     .font(.title)
                     .bold()
-                    .padding()
+                    .padding(.top)
+                Text(meal.formattedPrice)
+                    .font(.headline)
+                    .padding(.trailing, 20)
                 if imageLoader.image != nil {
                     Image(uiImage: imageLoader.image!)
                         .resizable()
@@ -41,17 +45,18 @@ struct MealDetailsView: View {
                             .fixedSize(horizontal: false, vertical: true)
                         
                         HStack(alignment: .center){
-                            Text(meal.formattedPrice)
-                                .font(.headline)
-                                .padding(.trailing, 20)
                             
+                            CustomStepper(stepperValue: $stepperValue)
+                            Spacer()
+
+
                             Button {
-                                mealViewModel.addToCart(meal.id)
+                                mealViewModel.addToCart(meal.id, stepperValue)
                             } label: {
                                 HStack() {
                                     Image(systemName: "cart.badge.plus")
                                         .bold().font(.callout)
-                                    Text("Add to cart")
+                                    Text("Add to cart: \(String(format: "%.2f$", meal.price * Double(stepperValue)))")
                                         .bold().font(.callout)
                                 }
                                 .padding(8)
@@ -59,9 +64,9 @@ struct MealDetailsView: View {
                                 .background(Color.green)
                                 .cornerRadius(45)
                             }
-                            .padding(.leading, 20)
+
                         }
-                        .padding(.bottom)
+                        .padding([.bottom, .horizontal])
                         
                         Text("Meal category: \(meal.category)")
                             .font(.footnote)

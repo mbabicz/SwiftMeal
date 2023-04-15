@@ -41,7 +41,7 @@ struct MealCard: View {
                     .foregroundColor(.black)
                 
                 Button {
-                    mealViewModel.addToCart(meal.id)
+                    mealViewModel.addToCart(meal.id, 1)
                 } label: {
                     HStack() {
                         Image(systemName: "cart.badge.plus")
