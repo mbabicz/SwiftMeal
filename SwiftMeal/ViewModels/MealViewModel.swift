@@ -11,7 +11,7 @@ import Firebase
 
 class MealViewModel: ObservableObject {
     @Published var meals: [Meal]?
-    @Published var cartMealsID = [String]()
+    @Published var cartMeals: [Meal: Int] = [:]
     private let db = Firestore.firestore()
     private let defaultImage = "https://firebasestorage.googleapis.com/v0/b/swiftmeal-26927.appspot.com/o/pl-default-home_default.jpg?alt=media&token=e55410a7-d06f-4d9d-aebf-41eacb504642"
     
@@ -40,8 +40,16 @@ class MealViewModel: ObservableObject {
             }
         }
     }
-    
-    func addToCart(_ productID: String){
-        cartMealsID.append(productID)
+
+    func addToCart(_ productID: String) {
+        if let meal = meals?.first(where: { $0.id == productID }) {
+            if let count = cartMeals[meal] {
+                cartMeals[meal] = count + 1
+            } else {
+                cartMeals[meal] = 1
+            }
+            print("dodaje produkt \(meal) \(String(describing: cartMeals))")
+        }
     }
+
 }

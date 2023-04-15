@@ -55,17 +55,16 @@ struct MainView: View {
                         .padding(.bottom, 35)
                     }
                 }
-                VStack(){
+                VStack{
                     Spacer()
                     
-                    if !mealViewModel.cartMealsID.isEmpty {
-                        Button {
-                            
-                        } label: {
+                    if !mealViewModel.cartMeals.isEmpty {
+                        let cartCount = mealViewModel.cartMeals.values.reduce(0, +)
+                        NavigationLink(destination: CartView()) {
                             HStack() {
                                 Image(systemName: "cart.fill")
                                     .bold().font(.callout)
-                                Text("Go to cart: \(mealViewModel.cartMealsID.count) item")
+                                Text("Go to cart: \(cartCount) items")
                                     .bold().font(.callout)
                             }
                             .padding(8)
@@ -73,7 +72,6 @@ struct MainView: View {
                             .background(Color.purple)
                             .cornerRadius(45)
                             .shadow(radius: 10)
-                            
                         }
                     }
                 }
