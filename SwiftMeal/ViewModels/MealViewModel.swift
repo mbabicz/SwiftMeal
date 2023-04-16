@@ -60,5 +60,4 @@ class MealViewModel: ObservableObject {
         }
         self.totalCartPrice = totalPrice
     }
-
 }

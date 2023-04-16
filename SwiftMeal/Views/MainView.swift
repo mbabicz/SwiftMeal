@@ -20,6 +20,10 @@ struct MainView: View {
     @EnvironmentObject var mealViewModel: MealViewModel
     @State private var selectedCategory: Category = .all
     
+    @State private var showConfirmation = false
+    @State private var showAddedPrice = false
+    @State private var addedPrice: Double = 0.0
+    
     var filteredMeals: [Meal] {
         if selectedCategory == .all {
             return mealViewModel.meals ?? []
@@ -46,8 +50,8 @@ struct MainView: View {
                             GridItem(.flexible())
                         ], spacing: 0) {
                             ForEach(filteredMeals, id: \.self) { meal in
-                                NavigationLink(destination: MealDetailsView(meal: meal)) {
-                                    MealCard(meal: meal)
+                                NavigationLink(destination: MealDetailsView(meal: meal, showConfirmation: $showConfirmation)) {
+                                    MealCard(meal: meal, showAddedPrice: $showAddedPrice, addedPrice: $addedPrice)
                                         .padding(10)
                                 }
                             }
@@ -56,22 +60,37 @@ struct MainView: View {
                     }
                 }
                 VStack{
-                    Spacer()
-                    
+                    Spacer() //move the navigation link to the bottom of the screen
                     if !mealViewModel.cartMeals.isEmpty {
-                        let cartCount = mealViewModel.cartMeals.values.reduce(0, +)
-                        NavigationLink(destination: CartView()) {
-                            HStack() {
-                                Image(systemName: "cart.fill")
-                                    .bold().font(.callout)
-                                Text("Go to cart: \(String(format: "%.2f", mealViewModel.totalCartPrice))$")
-                                    .bold().font(.callout)
+                        
+                        ZStack{
+                            NavigationLink(destination: CartView()) {
+                                HStack() {
+                                    Image(systemName: "cart.fill")
+                                        .bold().font(.callout)
+                                    Text("Go to cart: \(String(format: "%.2f", mealViewModel.totalCartPrice))$")
+                                        .bold().font(.callout)
+                                }
+                                .padding(8)
+                                .foregroundColor(.white)
+                                .background(Color.purple)
+                                .cornerRadius(45)
+                                .shadow(radius: 10)
                             }
-                            .padding(8)
-                            .foregroundColor(.white)
-                            .background(Color.purple)
-                            .cornerRadius(45)
-                            .shadow(radius: 10)
+                            if showAddedPrice {
+                                Text("+\(String(format: "%.2f", self.addedPrice))$")
+                                    .bold()
+                                    .transition(.asymmetric(
+                                        insertion: AnyTransition.opacity.animation(.easeInOut(duration: 0.5).delay(0.3)),
+                                        removal: AnyTransition.opacity.animation(.easeInOut(duration: 0.5))
+                                    ))
+                                    .onAppear {
+                                        DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
+                                            self.showAddedPrice = false
+                                        }
+                                    }
+                                    .offset(x: 125, y: 2)
+                            }
                         }
                     }
                 }
@@ -79,6 +98,28 @@ struct MainView: View {
             .onAppear{
                 mealViewModel.fetchMeals()
             }
+            .overlay(
+                Group {
+                    if showConfirmation {
+                        VStack {
+                            Text("Product successfully added to cart!")
+                                .foregroundColor(.white)
+                                .padding(12)
+                                .background(Color.purple)
+                                .cornerRadius(12)
+                        }
+                        .transition(.asymmetric(
+                            insertion: AnyTransition.opacity.animation(.easeInOut(duration: 0.5).delay(0.3)),
+                            removal: AnyTransition.opacity.animation(.easeInOut(duration: 0.5))
+                        ))
+                        .onAppear {
+                            DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
+                                self.showConfirmation = false
+                            }
+                        }
+                    }
+                }
+            )
         }.accentColor(.black)
     }
 }

@@ -19,7 +19,6 @@ struct CustomStepper: View {
                     Image(systemName: "minus")
                         .foregroundColor(.black)
                 }
-                
                 Divider()
                     .frame(height: 16)
                     .padding(.horizontal, 10)
@@ -29,7 +28,6 @@ struct CustomStepper: View {
                 }) {
                     Image(systemName: "plus")
                         .foregroundColor(.black)
-                    
                 }
             }
             .padding(.vertical, 8)

@@ -14,6 +14,9 @@ struct MealDetailsView: View {
     @EnvironmentObject var mealViewModel: MealViewModel
     @State private var stepperValue = 1
     
+    @Environment(\.presentationMode) var presentationMode
+    @Binding var showConfirmation: Bool
+    
     var body: some View {
         ZStack{
             ScrollView{
@@ -48,10 +51,13 @@ struct MealDetailsView: View {
                             
                             CustomStepper(stepperValue: $stepperValue)
                             Spacer()
-
-
+                            
                             Button {
                                 mealViewModel.addToCart(meal.id, stepperValue)
+                                self.presentationMode.wrappedValue.dismiss()
+                                withAnimation(){
+                                    self.showConfirmation = true
+                                }
                             } label: {
                                 HStack() {
                                     Image(systemName: "cart.badge.plus")
@@ -64,7 +70,6 @@ struct MealDetailsView: View {
                                 .background(Color.green)
                                 .cornerRadius(45)
                             }
-
                         }
                         .padding([.bottom, .horizontal])
                         
@@ -93,7 +98,6 @@ struct MealDetailsView: View {
                 Spacer()
                 
                 if !mealViewModel.cartMeals.isEmpty {
-                    let cartCount = mealViewModel.cartMeals.values.reduce(0, +)
                     NavigationLink(destination: CartView()) {
                         HStack() {
                             Image(systemName: "cart.fill")

@@ -12,6 +12,8 @@ struct MealCard: View {
     var meal: Meal
     @StateObject private var imageLoader = ImageLoader()
     @EnvironmentObject var mealViewModel: MealViewModel
+    @Binding var showAddedPrice: Bool
+    @Binding var addedPrice: Double
     
     var body: some View {
         ZStack{
@@ -42,6 +44,9 @@ struct MealCard: View {
                 
                 Button {
                     mealViewModel.addToCart(meal.id, 1)
+                    withAnimation(){
+                        showAddedPrice = true
+                    }
                 } label: {
                     HStack() {
                         Image(systemName: "cart.badge.plus")
@@ -58,6 +63,7 @@ struct MealCard: View {
             }
             .onAppear {
                 imageLoader.loadImage(with: meal.imageURL)
+                addedPrice = meal.price
             }
         }
     }
