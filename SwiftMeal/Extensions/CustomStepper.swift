@@ -36,8 +36,6 @@ struct CustomStepper: View {
             .background(Color.gray.opacity(0.16))
             .cornerRadius(10)
         }
-        Text("\(stepperValue)")
-            .font(.title2)
     }
 }
 

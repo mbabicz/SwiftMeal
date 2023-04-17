@@ -14,8 +14,11 @@ struct CartView: View {
     
     var body: some View {
         if mealViewModel.meals != nil {
-            ForEach(mealViewModel.cartMeals.sorted(by: { $0.key.name < $1.key.name }), id: \.key) { meal, quantity in
-                Text("\(meal.name) - \(quantity)")
+            ScrollView(){
+                ForEach(mealViewModel.cartMeals.sorted(by: { $0.key.name < $1.key.name }), id: \.key) { meal, quantity in
+                    CartProductView(meal: meal, quantity: quantity)
+                }
+                Spacer()
             }
         } else {
             Text("no meals in cart")

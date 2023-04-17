@@ -81,7 +81,7 @@ struct MainView: View {
                                 Text("+\(String(format: "%.2f", self.addedPrice))$")
                                     .bold()
                                     .transition(.asymmetric(
-                                        insertion: AnyTransition.opacity.animation(.easeInOut(duration: 0.5).delay(0.3)),
+                                        insertion: AnyTransition.opacity.animation(.easeInOut(duration: 0.5)),//.delay(0.3)),
                                         removal: AnyTransition.opacity.animation(.easeInOut(duration: 0.5))
                                     ))
                                     .onAppear {

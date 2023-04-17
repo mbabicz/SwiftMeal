@@ -50,6 +50,8 @@ struct MealDetailsView: View {
                         HStack(alignment: .center){
                             
                             CustomStepper(stepperValue: $stepperValue)
+                            Text("\(stepperValue)")
+                                .font(.title2)
                             Spacer()
                             
                             Button {
