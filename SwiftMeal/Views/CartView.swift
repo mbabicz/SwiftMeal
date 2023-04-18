@@ -14,11 +14,34 @@ struct CartView: View {
     
     var body: some View {
         if mealViewModel.meals != nil {
-            ScrollView(){
-                ForEach(mealViewModel.cartMeals.sorted(by: { $0.key.name < $1.key.name }), id: \.key) { meal, quantity in
-                    CartProductView(meal: meal, quantity: quantity)
+            ZStack{
+                ScrollView(){
+                    ForEach(mealViewModel.cartMeals.sorted(by: { $0.key.name < $1.key.name }), id: \.key) { meal, quantity in
+                        CartProductView(meal: meal, quantity: quantity)
+                    }
+                    Spacer()
                 }
-                Spacer()
+                .padding(.bottom, 60)
+                VStack{
+                    Spacer()
+                    Button {
+                        //
+                    } label: {
+                        HStack() {
+                            Image(systemName: "cart.fill")
+                                .bold().font(.callout)
+                            Text("Go to payment: \(String(format: "%.2f", mealViewModel.totalCartPrice))$")
+                                .bold().font(.callout)
+                        }
+                        .frame(maxWidth: .infinity)
+                        .padding(15)
+                        .foregroundColor(.white)
+                        .background(Color.green)
+                        .cornerRadius(10)
+                        .shadow(radius: 10)
+                    }
+                    .padding(.horizontal)
+                }
             }
         } else {
             Text("no meals in cart")

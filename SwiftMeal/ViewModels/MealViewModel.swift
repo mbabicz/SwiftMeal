@@ -60,4 +60,9 @@ class MealViewModel: ObservableObject {
         }
         self.totalCartPrice = totalPrice
     }
+    
+    func removeMealFromCart(_ meal: Meal) {
+        cartMeals.removeValue(forKey: meal)
+        calculateTotalPrice()
+    }
 }

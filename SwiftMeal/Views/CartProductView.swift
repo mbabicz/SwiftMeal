@@ -12,6 +12,8 @@ struct CartProductView: View {
     var meal: Meal
     @State var quantity: Int
     @StateObject private var imageLoader = ImageLoader()
+    @EnvironmentObject var mealViewModel: MealViewModel
+
     
     var body: some View {
         ZStack{
@@ -75,7 +77,7 @@ struct CartProductView: View {
                 HStack{
                     Spacer()
                     Button {
-                        //
+                        mealViewModel.removeMealFromCart(meal)
                     } label: {
                         Image(systemName: "trash.fill")
                     }
@@ -90,5 +92,14 @@ struct CartProductView: View {
         .onAppear {
             imageLoader.loadImage(with: meal.imageURL)
         }
+        
+        .onChange(of: quantity) { newQuantity in
+            mealViewModel.cartMeals[meal] = newQuantity
+            mealViewModel.calculateTotalPrice()
+            if newQuantity == 0 {
+                mealViewModel.removeMealFromCart(meal)
+            }
+        }
+
     }
 }

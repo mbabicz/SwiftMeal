@@ -8,7 +8,16 @@
 import SwiftUI
 
 struct CustomStepper: View {
-    @Binding var stepperValue: Int
+    @Binding var stepperValue: Int {
+        didSet {
+            if stepperValue < 0 {
+                stepperValue = 0
+            } else if stepperValue > 25 {
+                stepperValue = 25
+            }
+        }
+    }
+
     
     var body: some View {
         HStack{
