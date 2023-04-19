@@ -81,11 +81,11 @@ struct MainView: View {
                                 Text("+\(String(format: "%.2f", self.addedPrice))$")
                                     .bold()
                                     .transition(.asymmetric(
-                                        insertion: AnyTransition.opacity.animation(.easeInOut(duration: 0.5)),//.delay(0.3)),
-                                        removal: AnyTransition.opacity.animation(.easeInOut(duration: 0.5))
+                                        insertion: AnyTransition.opacity.animation(.easeInOut(duration: 0.3)),
+                                        removal: AnyTransition.opacity.animation(.easeInOut(duration: 0.3))
                                     ))
                                     .onAppear {
-                                        DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
+                                        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
                                             self.showAddedPrice = false
                                         }
                                     }
@@ -95,9 +95,7 @@ struct MainView: View {
                     }
                 }
             }
-            .onAppear{
-                mealViewModel.fetchMeals()
-            }
+            
             .overlay(
                 Group {
                     if showConfirmation {
@@ -120,7 +118,13 @@ struct MainView: View {
                     }
                 }
             )
-        }.accentColor(.black)
+        }
+        .accentColor(.black)
+        
+        .onAppear{
+            mealViewModel.fetchMeals()
+            mealViewModel.fetchCartMeals()
+        }
     }
 }
 

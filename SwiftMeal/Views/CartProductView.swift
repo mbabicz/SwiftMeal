@@ -77,7 +77,9 @@ struct CartProductView: View {
                 HStack{
                     Spacer()
                     Button {
-                        mealViewModel.removeMealFromCart(meal)
+                        withAnimation{
+                            mealViewModel.removeMealFromCart(meal.id)
+                        }
                     } label: {
                         Image(systemName: "trash.fill")
                     }
@@ -97,7 +99,7 @@ struct CartProductView: View {
             mealViewModel.cartMeals[meal] = newQuantity
             mealViewModel.calculateTotalPrice()
             if newQuantity == 0 {
-                mealViewModel.removeMealFromCart(meal)
+                mealViewModel.removeMealFromCart(meal.id)
             }
         }
 
