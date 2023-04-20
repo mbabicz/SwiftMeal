@@ -37,7 +37,15 @@ struct MealCard: View {
                         .aspectRatio(contentMode: .fit)
                         .frame(height: 75)
                         .cornerRadius(20)
+                } else {
+                    Image("burger")
+                        .resizable()
+                        .compositingGroup()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(height: 75)
+                        .cornerRadius(20)
                 }
+
                 Text(meal.formattedPrice)
                     .font(.subheadline)
                     .foregroundColor(.black)
@@ -46,6 +54,7 @@ struct MealCard: View {
                     mealViewModel.addToCart(meal.id, 1)
                     withAnimation(){
                         showAddedPrice = true
+                        addedPrice = meal.price
                     }
                 } label: {
                     HStack() {
@@ -59,7 +68,7 @@ struct MealCard: View {
                     .background(Color.green)
                     .cornerRadius(45)
                 }
-                .padding(.bottom, 20)                
+                .padding(.bottom, 20)
             }
             .onAppear {
                 imageLoader.loadImage(with: meal.imageURL)

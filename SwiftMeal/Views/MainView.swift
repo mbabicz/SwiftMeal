@@ -23,10 +23,6 @@ struct MainView: View {
     @State private var showAddedPrice = false
     @State private var addedPrice: Double = 0.0
     
-    
-    @State private var cartMeals: [Meal: Int] = [:]
-
-    
     var filteredMeals: [Meal] {
         if selectedCategory == .all {
             return mealViewModel.meals ?? []
@@ -55,26 +51,24 @@ struct MainView: View {
                     Spacer()
                 }
                 .zIndex(1)
-                    ScrollView{
-                        if mealViewModel.meals != nil {
-                            LazyVGrid(columns: [
-                                GridItem(.flexible()),
-                                GridItem(.flexible())
-                            ], spacing: 0) {
-                                ForEach(filteredMeals, id: \.self) { meal in
-                                    NavigationLink(destination: MealDetailsView(meal: meal, showConfirmation: $showConfirmation)) {
-                                        MealCard(meal: meal, showAddedPrice: $showAddedPrice, addedPrice: $addedPrice)
-                                            .padding(10)
-                                    }
+                ScrollView{
+                    if mealViewModel.meals != nil {
+                        LazyVGrid(columns: [
+                            GridItem(.flexible()),
+                            GridItem(.flexible())
+                        ], spacing: 0) {
+                            ForEach(filteredMeals, id: \.self) { meal in
+                                NavigationLink(destination: MealDetailsView(meal: meal, showConfirmation: $showConfirmation)) {
+                                    MealCard(meal: meal, showAddedPrice: $showAddedPrice, addedPrice: $addedPrice)
+                                        .padding(10)
                                 }
                             }
-                            .padding(.bottom, 35)
-                            .padding(.top,50)
                         }
+                        .padding(.bottom, 35)
+                        .padding(.top,50)
                     }
-                    .padding(.top, 0.15)
-                
-
+                }
+                .padding(.top, 0.15)                
                 
                 VStack{
                     Spacer() //move the navigation link to the bottom of the screen
@@ -132,9 +126,10 @@ struct MainView: View {
                                 self.showConfirmation = false
                             }
                         }
-                    }
+                    }                            
                 }
             )
+            
         }
         .accentColor(.black)
         
