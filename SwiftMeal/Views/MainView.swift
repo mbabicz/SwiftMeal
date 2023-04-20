@@ -10,7 +10,6 @@ import SwiftUI
 enum Category: String, CaseIterable {
     case all = "All"
     case burgers = "Burgers"
-    case pizza = "Pizza"
     case additives = "Additives"
     case drinks = "Drinks"
 }
@@ -35,30 +34,44 @@ struct MainView: View {
     var body: some View {
         NavigationView{
             ZStack{
-                ScrollView{
-                    Picker(selection: $selectedCategory, label: Text("Select a category")) {
-                        ForEach(Category.allCases, id: \.self) { category in
-                            Text(category.rawValue).tag(category)
-                        }
-                    }
-                    .pickerStyle(SegmentedPickerStyle())
-                    .padding()
-                    
-                    if mealViewModel.meals != nil {
-                        LazyVGrid(columns: [
-                            GridItem(.flexible()),
-                            GridItem(.flexible())
-                        ], spacing: 0) {
-                            ForEach(filteredMeals, id: \.self) { meal in
-                                NavigationLink(destination: MealDetailsView(meal: meal, showConfirmation: $showConfirmation)) {
-                                    MealCard(meal: meal, showAddedPrice: $showAddedPrice, addedPrice: $addedPrice)
-                                        .padding(10)
-                                }
+                VStack(spacing: 0){
+                    ZStack{
+                        Picker(selection: $selectedCategory, label: Text("Select a category")) {
+                            ForEach(Category.allCases, id: \.self) { category in
+                                Text(category.rawValue)
+                                    .bold()
+                                    .tag(category)
                             }
                         }
-                        .padding(.bottom, 35)
+                        .pickerStyle(SegmentedPickerStyle())
+                        .background(.white)
+                        .cornerRadius(8)
+                        .padding([.horizontal, .top])
                     }
+                    Spacer()
                 }
+                .zIndex(1)
+                    ScrollView{
+                        if mealViewModel.meals != nil {
+                            LazyVGrid(columns: [
+                                GridItem(.flexible()),
+                                GridItem(.flexible())
+                            ], spacing: 0) {
+                                ForEach(filteredMeals, id: \.self) { meal in
+                                    NavigationLink(destination: MealDetailsView(meal: meal, showConfirmation: $showConfirmation)) {
+                                        MealCard(meal: meal, showAddedPrice: $showAddedPrice, addedPrice: $addedPrice)
+                                            .padding(10)
+                                    }
+                                }
+                            }
+                            .padding(.bottom, 35)
+                            .padding(.top,50)
+                        }
+                    }
+                    .padding(.top, 0.15)
+                
+
+                
                 VStack{
                     Spacer() //move the navigation link to the bottom of the screen
                     if !mealViewModel.cartMeals.isEmpty {
