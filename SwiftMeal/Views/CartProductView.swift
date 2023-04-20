@@ -13,7 +13,6 @@ struct CartProductView: View {
     @State var quantity: Int
     @StateObject private var imageLoader = ImageLoader()
     @EnvironmentObject var mealViewModel: MealViewModel
-
     
     var body: some View {
         ZStack{
@@ -21,7 +20,8 @@ struct CartProductView: View {
                 .fill(.white)
                 .shadow(radius: 10)
                 .frame(height: 140)
-                .padding(10)
+                .padding(.horizontal, 10)
+                .padding(.bottom, 5)
             VStack{
                 HStack{
                     if let image = imageLoader.image {

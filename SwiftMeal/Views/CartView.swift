@@ -22,7 +22,7 @@ struct CartView: View {
                     Spacer()
                 }
                 .padding(.bottom, 60)
-                VStack{
+                VStack(spacing: 0){
                     Spacer()
                     Button {
                         //

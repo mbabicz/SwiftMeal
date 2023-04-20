@@ -32,14 +32,13 @@ class MealViewModel: ObservableObject {
     
     func fetchMeals(){
         self.meals = nil
-        db.collection("Meals").getDocuments { snapshot, error in
+        self.db.collection("Meals").getDocuments { snapshot, error in
             guard error == nil else {
                 print("Error: can't get meals from database")
                 return
             }
             guard let snapshot = snapshot else { return }
             DispatchQueue.main.async {
-                
                 self.meals = snapshot.documents.compactMap { doc -> Meal? in
                     let name = doc["name"] as? String ?? ""
                     let id = doc.documentID

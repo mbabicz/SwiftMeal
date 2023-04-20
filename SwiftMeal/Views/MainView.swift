@@ -23,6 +23,10 @@ struct MainView: View {
     @State private var showAddedPrice = false
     @State private var addedPrice: Double = 0.0
     
+    
+    @State private var cartMeals: [Meal: Int] = [:]
+
+    
     var filteredMeals: [Meal] {
         if selectedCategory == .all {
             return mealViewModel.meals ?? []
