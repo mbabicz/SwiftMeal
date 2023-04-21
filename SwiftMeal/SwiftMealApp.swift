@@ -25,9 +25,12 @@ struct SwiftMealApp: App {
     var body: some Scene {
         WindowGroup {
             let mealVM = MealViewModel()
+            let userVM = UserViewModel()
 
-            MainView()
+
+            ContentView()
                 .environmentObject(mealVM)
+                .environmentObject(userVM)
 
         }
     }

@@ -9,7 +9,7 @@ import SwiftUI
 
 struct LoadingView: View {
     @State private var isAnimating = false
-
+    
     var body: some View {
         VStack {
             Image("burger")
@@ -17,7 +17,7 @@ struct LoadingView: View {
                 .aspectRatio(contentMode: .fill)
                 .frame(width: 80, height: 80)
                 .padding(20)
-
+            
             HStack(spacing: 0) {
                 ForEach(Array("SwiftMeal"), id: \.self) { char in
                     Text(String(char))
