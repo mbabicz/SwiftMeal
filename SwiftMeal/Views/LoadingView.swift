@@ -27,12 +27,10 @@ struct LoadingView: View {
                         .foregroundColor(.orange)
                         .scaleEffect(isAnimating ? 1.5 : 1.0)
                         .animation(Animation.interpolatingSpring(stiffness: 200, damping: 8).repeatForever(autoreverses: true).delay(Double("SwiftMeal".distance(from: "SwiftMeal".startIndex, to: "SwiftMeal".firstIndex(of: char)!)) / 10))
+                        .onAppear() {
+                            isAnimating = true
+                        }
                 }
-            }
-        }
-        .onAppear() {
-            withAnimation {
-                isAnimating = true
             }
         }
     }

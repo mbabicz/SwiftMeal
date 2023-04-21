@@ -11,25 +11,25 @@ struct ContentView: View {
     
     @EnvironmentObject var userViewModel: UserViewModel
     @EnvironmentObject var mealViewModel: MealViewModel
-
+    
     var body: some View {
-        NavigationView{
+        ZStack{
             if !userViewModel.userIsAuthenticatedAndSynced {
                 LoadingView()
             } else {
-                MainView()
+                NavigationView{
+                    MainView()
+                }
             }
         }
         .accentColor(.black)
-
+        
         .onAppear{
-            DispatchQueue.main.asyncAfter(deadline: .now() + 2.5) {
-                withAnimation{
-                    if userViewModel.userIsAuthenticated{
-                        userViewModel.syncUser()
-                    } else {
-                        userViewModel.signInAnonymously()
-                    }
+            DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+                if userViewModel.userIsAuthenticated{
+                    userViewModel.syncUser()
+                } else {
+                    userViewModel.signInAnonymously()
                 }
             }
             mealViewModel.fetchMeals()
