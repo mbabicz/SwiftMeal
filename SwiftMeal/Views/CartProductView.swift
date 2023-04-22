@@ -96,12 +96,12 @@ struct CartProductView: View {
         }
         
         .onChange(of: quantity) { newQuantity in
-            mealViewModel.cartMeals[meal] = newQuantity
-            mealViewModel.calculateTotalPrice()
+            mealViewModel.updateQuantity(meal.id, newQuantity)
             if newQuantity == 0 {
-                mealViewModel.removeMealFromCart(meal.id)
+                withAnimation{
+                    mealViewModel.removeMealFromCart(meal.id)
+                }
             }
         }
-
     }
 }
