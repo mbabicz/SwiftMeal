@@ -12,12 +12,18 @@ import CoreData
 import FirebaseAuth
 
 class MealViewModel: ObservableObject {
+    
     @Published var meals: [Meal]?
     @Published var cartMeals: [Meal: Int] = [:]
     
     @Published var totalCartPrice = 0.0
-    private let db = Firestore.firestore()
     private let defaultImage = "https://firebasestorage.googleapis.com/v0/b/swiftmeal-26927.appspot.com/o/pl-default-home_default.jpg?alt=media&token=e55410a7-d06f-4d9d-aebf-41eacb504642"
+    
+    private let db = Firestore.firestore()
+    private let auth = Auth.auth()
+    var uuid: String? {
+        return auth.currentUser?.uid
+    }
     
     func fetchMeals(){
         self.meals = nil
@@ -45,9 +51,8 @@ class MealViewModel: ObservableObject {
     }
     
     func addToCart(_ productID: String, _ quantity: Int) {
-        guard let userId = Auth.auth().currentUser?.uid else { return }
         
-        let userRef = self.db.collection("Users").document(userId)
+        let userRef = self.db.collection("Users").document(self.uuid!)
         
         userRef.getDocument { (document, error) in
             if let document = document, document.exists {
@@ -73,9 +78,10 @@ class MealViewModel: ObservableObject {
     }
     
     func fetchCartMeals() {
-        guard let authUser = Auth.auth().currentUser else { return }
-        let docRef = self.db.collection("Users").document(authUser.uid)
-        docRef.getDocument { document, error in
+        
+        let userRef = self.db.collection("Users").document(self.uuid!)
+        
+        userRef.getDocument { document, error in
             guard let document = document, document.exists,
                   let documentData = document.data(),
                   let cartMeals = documentData["cart"] as? [String: Int] else {
@@ -106,15 +112,14 @@ class MealViewModel: ObservableObject {
     }
     
     func removeMealFromCart(_ mealID: String) {
-        guard let authUser = Auth.auth().currentUser else { return }
-        let docRef = self.db.collection("Users").document(authUser.uid)
-        docRef.getDocument { document, error in
+        let userRef = self.db.collection("Users").document(self.uuid!)
+        userRef.getDocument { document, error in
             if let document = document, document.exists,
                var documentData = document.data(),
                var cartMeals = documentData["cart"] as? [String: Int] {
                 cartMeals[mealID] = nil
                 documentData["cart"] = cartMeals
-                docRef.setData(documentData) { error in
+                userRef.setData(documentData) { error in
                     if let error = error {
                         print("Error updating document: \(error)")
                     } else {
@@ -127,9 +132,7 @@ class MealViewModel: ObservableObject {
     }
     
     func updateQuantity(_ productID: String, _ newQuantity: Int) {
-        guard let userId = Auth.auth().currentUser?.uid else { return }
-        
-        let userRef = self.db.collection("Users").document(userId)
+        let userRef = self.db.collection("Users").document(self.uuid!)
         
         userRef.updateData([
             "cart.\(productID)": newQuantity
