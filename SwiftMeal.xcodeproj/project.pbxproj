@@ -7,6 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2905CCAB29F5429800D4F968 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2921201529DC65D4000661FB /* MainView.swift */; };
+		2905CCAC29F5429800D4F968 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2971E29129F1A1CF0077FCFC /* LoadingView.swift */; };
+		2905CCAD29F5429800D4F968 /* Meal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2921201129DC4AC5000661FB /* Meal.swift */; };
+		2905CCAE29F5429800D4F968 /* CustomStepper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2971E28829EB34400077FCFC /* CustomStepper.swift */; };
+		2905CCAF29F5429800D4F968 /* CartProductView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2971E28A29EDCAC40077FCFC /* CartProductView.swift */; };
+		2905CCB029F5429800D4F968 /* CartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2971E28629EAD7DD0077FCFC /* CartView.swift */; };
+		2905CCB129F5429800D4F968 /* MealViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2921201329DC4D4C000661FB /* MealViewModel.swift */; };
+		2905CCB229F5429800D4F968 /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2921201A29DC949C000661FB /* ImageLoader.swift */; };
+		2905CCB329F5429800D4F968 /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2971E29529F2C2590077FCFC /* UserViewModel.swift */; };
+		2905CCB429F5429800D4F968 /* MealDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2921201C29DED3B1000661FB /* MealDetailsView.swift */; };
+		2905CCB529F5429800D4F968 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2971E29329F2C2360077FCFC /* User.swift */; };
+		2905CCB629F5429800D4F968 /* MealCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2921201729DC9337000661FB /* MealCard.swift */; };
+		2905CCB729F5429800D4F968 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2971E29729F2C64A0077FCFC /* ContentView.swift */; };
 		29211FD129DB6DC0000661FB /* SwiftMealApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29211FD029DB6DC0000661FB /* SwiftMealApp.swift */; };
 		29211FD529DB6DC1000661FB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 29211FD429DB6DC1000661FB /* Assets.xcassets */; };
 		29211FD829DB6DC1000661FB /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 29211FD729DB6DC1000661FB /* Preview Assets.xcassets */; };
@@ -520,7 +533,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2905CCB629F5429800D4F968 /* MealCard.swift in Sources */,
+				2905CCAE29F5429800D4F968 /* CustomStepper.swift in Sources */,
+				2905CCB729F5429800D4F968 /* ContentView.swift in Sources */,
+				2905CCB129F5429800D4F968 /* MealViewModel.swift in Sources */,
+				2905CCB029F5429800D4F968 /* CartView.swift in Sources */,
+				2905CCB329F5429800D4F968 /* UserViewModel.swift in Sources */,
+				2905CCB429F5429800D4F968 /* MealDetailsView.swift in Sources */,
+				2905CCAD29F5429800D4F968 /* Meal.swift in Sources */,
+				2905CCAF29F5429800D4F968 /* CartProductView.swift in Sources */,
+				2905CCB229F5429800D4F968 /* ImageLoader.swift in Sources */,
+				2905CCB529F5429800D4F968 /* User.swift in Sources */,
 				29211FE229DB6DC2000661FB /* SwiftMealTests.swift in Sources */,
+				2905CCAB29F5429800D4F968 /* MainView.swift in Sources */,
+				2905CCAC29F5429800D4F968 /* LoadingView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -669,6 +695,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"SwiftMeal/Preview Content\"";
@@ -702,6 +729,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"SwiftMeal/Preview Content\"";
