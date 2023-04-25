@@ -60,10 +60,10 @@ struct MainView: View {
             .padding(.top, 0.15)                
             
             VStack{
-                Spacer() //move the navigation link to the bottom of the screen
-                if !mealViewModel.cartMeals.isEmpty {
-                    
-                    ZStack{
+                Spacer() //move this section to the bottom
+                
+                ZStack{
+                    if !mealViewModel.cartMeals.isEmpty {
                         NavigationLink(destination: CartView()) {
                             HStack() {
                                 Image(systemName: "cart.fill")
@@ -92,6 +92,38 @@ struct MainView: View {
                                 .offset(x: 125, y: 2)
                         }
                     }
+                    
+                    NavigationLink(destination: CartView()) {
+                        ZStack{
+                            Image("burger.fill")
+                                .resizable()
+                                .frame(width: 35, height: 35)
+                                .padding(12)
+                                .colorInvert()
+                                .background(Color.orange)
+                                .cornerRadius(45)
+                                .shadow(radius: 10)
+                                .overlay(
+                                    RoundedRectangle(cornerRadius: 45)
+                                        .stroke(.purple, lineWidth: 1)
+                                )
+                            Text("1")
+                                .font(.subheadline)
+                                .bold()
+                                .padding(.horizontal, 6)
+                                .padding(.vertical, 1)
+                                .foregroundColor(.black)
+                                .background(Color.white)
+                                .cornerRadius(45)
+                                .overlay(
+                                    RoundedRectangle(cornerRadius: 45)
+                                        .stroke(.purple, lineWidth: 1)
+                                )
+                                .offset(x: 21, y: -21)
+                        }
+                    }
+                    .offset(x: -145)
+                    
                 }
             }
         }
