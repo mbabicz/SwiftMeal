@@ -24,9 +24,7 @@ struct CartView: View {
                 .padding(.bottom, 60)
                 VStack(spacing: 0){
                     Spacer()
-                    Button {
-                        //
-                    } label: {
+                    NavigationLink(destination: PaymentView()) {
                         HStack() {
                             Image(systemName: "cart.fill")
                                 .bold().font(.callout)

@@ -20,6 +20,8 @@
 		2905CCB529F5429800D4F968 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2971E29329F2C2360077FCFC /* User.swift */; };
 		2905CCB629F5429800D4F968 /* MealCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2921201729DC9337000661FB /* MealCard.swift */; };
 		2905CCB729F5429800D4F968 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2971E29729F2C64A0077FCFC /* ContentView.swift */; };
+		2905CCB929F81D9000D4F968 /* PaymentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2905CCB829F81D9000D4F968 /* PaymentView.swift */; };
+		2905CCBB29F823BF00D4F968 /* PaymentProductCart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2905CCBA29F823BF00D4F968 /* PaymentProductCart.swift */; };
 		29211FD129DB6DC0000661FB /* SwiftMealApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29211FD029DB6DC0000661FB /* SwiftMealApp.swift */; };
 		29211FD529DB6DC1000661FB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 29211FD429DB6DC1000661FB /* Assets.xcassets */; };
 		29211FD829DB6DC1000661FB /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 29211FD729DB6DC1000661FB /* Preview Assets.xcassets */; };
@@ -67,6 +69,8 @@
 /* Begin PBXFileReference section */
 		0A405FB74421A65E0599929F /* Pods-SwiftMeal-SwiftMealUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftMeal-SwiftMealUITests.release.xcconfig"; path = "Target Support Files/Pods-SwiftMeal-SwiftMealUITests/Pods-SwiftMeal-SwiftMealUITests.release.xcconfig"; sourceTree = "<group>"; };
 		254E401E1FA7D3EC1B7FD5E4 /* Pods-SwiftMeal.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftMeal.release.xcconfig"; path = "Target Support Files/Pods-SwiftMeal/Pods-SwiftMeal.release.xcconfig"; sourceTree = "<group>"; };
+		2905CCB829F81D9000D4F968 /* PaymentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentView.swift; sourceTree = "<group>"; };
+		2905CCBA29F823BF00D4F968 /* PaymentProductCart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentProductCart.swift; sourceTree = "<group>"; };
 		29211FCD29DB6DC0000661FB /* SwiftMeal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftMeal.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		29211FD029DB6DC0000661FB /* SwiftMealApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftMealApp.swift; sourceTree = "<group>"; };
 		29211FD429DB6DC1000661FB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -217,6 +221,8 @@
 				2971E28A29EDCAC40077FCFC /* CartProductView.swift */,
 				2971E29129F1A1CF0077FCFC /* LoadingView.swift */,
 				2971E29729F2C64A0077FCFC /* ContentView.swift */,
+				2905CCB829F81D9000D4F968 /* PaymentView.swift */,
+				2905CCBA29F823BF00D4F968 /* PaymentProductCart.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -515,6 +521,7 @@
 				2971E29429F2C2360077FCFC /* User.swift in Sources */,
 				2921201829DC9337000661FB /* MealCard.swift in Sources */,
 				2921201429DC4D4C000661FB /* MealViewModel.swift in Sources */,
+				2905CCB929F81D9000D4F968 /* PaymentView.swift in Sources */,
 				2921201B29DC949C000661FB /* ImageLoader.swift in Sources */,
 				2921201229DC4AC5000661FB /* Meal.swift in Sources */,
 				2971E29629F2C2590077FCFC /* UserViewModel.swift in Sources */,
@@ -523,6 +530,7 @@
 				29211FD129DB6DC0000661FB /* SwiftMealApp.swift in Sources */,
 				2971E28B29EDCAC40077FCFC /* CartProductView.swift in Sources */,
 				2971E28729EAD7DD0077FCFC /* CartView.swift in Sources */,
+				2905CCBB29F823BF00D4F968 /* PaymentProductCart.swift in Sources */,
 				2971E29829F2C64A0077FCFC /* ContentView.swift in Sources */,
 				2921201D29DED3B1000661FB /* MealDetailsView.swift in Sources */,
 				2971E28929EB34400077FCFC /* CustomStepper.swift in Sources */,

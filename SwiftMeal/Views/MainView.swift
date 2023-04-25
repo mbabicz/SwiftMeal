@@ -57,7 +57,7 @@ struct MainView: View {
                     .padding(.top,50)
                 }
             }
-            .padding(.top, 0.15)                
+            .padding(.top, 0.15)
             
             VStack{
                 Spacer() //move this section to the bottom
@@ -93,7 +93,7 @@ struct MainView: View {
                         }
                     }
                     
-                    NavigationLink(destination: CartView()) {
+                    NavigationLink(destination: PaymentView()) {
                         ZStack{
                             Image("burger.fill")
                                 .resizable()
