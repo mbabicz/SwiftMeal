@@ -22,6 +22,8 @@
 		2905CCB729F5429800D4F968 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2971E29729F2C64A0077FCFC /* ContentView.swift */; };
 		2905CCB929F81D9000D4F968 /* PaymentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2905CCB829F81D9000D4F968 /* PaymentView.swift */; };
 		2905CCBB29F823BF00D4F968 /* PaymentProductCart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2905CCBA29F823BF00D4F968 /* PaymentProductCart.swift */; };
+		2905CCC129F83CF600D4F968 /* OrderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2905CCC029F83CF600D4F968 /* OrderViewModel.swift */; };
+		2905CCC329F83D0000D4F968 /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2905CCC229F83D0000D4F968 /* Order.swift */; };
 		29211FD129DB6DC0000661FB /* SwiftMealApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29211FD029DB6DC0000661FB /* SwiftMealApp.swift */; };
 		29211FD529DB6DC1000661FB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 29211FD429DB6DC1000661FB /* Assets.xcassets */; };
 		29211FD829DB6DC1000661FB /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 29211FD729DB6DC1000661FB /* Preview Assets.xcassets */; };
@@ -71,6 +73,8 @@
 		254E401E1FA7D3EC1B7FD5E4 /* Pods-SwiftMeal.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftMeal.release.xcconfig"; path = "Target Support Files/Pods-SwiftMeal/Pods-SwiftMeal.release.xcconfig"; sourceTree = "<group>"; };
 		2905CCB829F81D9000D4F968 /* PaymentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentView.swift; sourceTree = "<group>"; };
 		2905CCBA29F823BF00D4F968 /* PaymentProductCart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentProductCart.swift; sourceTree = "<group>"; };
+		2905CCC029F83CF600D4F968 /* OrderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderViewModel.swift; sourceTree = "<group>"; };
+		2905CCC229F83D0000D4F968 /* Order.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Order.swift; sourceTree = "<group>"; };
 		29211FCD29DB6DC0000661FB /* SwiftMeal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftMeal.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		29211FD029DB6DC0000661FB /* SwiftMealApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftMealApp.swift; sourceTree = "<group>"; };
 		29211FD429DB6DC1000661FB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -198,6 +202,7 @@
 			children = (
 				2921201129DC4AC5000661FB /* Meal.swift */,
 				2971E29329F2C2360077FCFC /* User.swift */,
+				2905CCC229F83D0000D4F968 /* Order.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -207,6 +212,7 @@
 			children = (
 				2921201329DC4D4C000661FB /* MealViewModel.swift */,
 				2971E29529F2C2590077FCFC /* UserViewModel.swift */,
+				2905CCC029F83CF600D4F968 /* OrderViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -530,10 +536,12 @@
 				29211FD129DB6DC0000661FB /* SwiftMealApp.swift in Sources */,
 				2971E28B29EDCAC40077FCFC /* CartProductView.swift in Sources */,
 				2971E28729EAD7DD0077FCFC /* CartView.swift in Sources */,
+				2905CCC329F83D0000D4F968 /* Order.swift in Sources */,
 				2905CCBB29F823BF00D4F968 /* PaymentProductCart.swift in Sources */,
 				2971E29829F2C64A0077FCFC /* ContentView.swift in Sources */,
 				2921201D29DED3B1000661FB /* MealDetailsView.swift in Sources */,
 				2971E28929EB34400077FCFC /* CustomStepper.swift in Sources */,
+				2905CCC129F83CF600D4F968 /* OrderViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

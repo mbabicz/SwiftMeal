@@ -26,11 +26,13 @@ struct SwiftMealApp: App {
         WindowGroup {
             let mealVM = MealViewModel()
             let userVM = UserViewModel()
+            let orderVM = OrderViewModel()
 
 
             ContentView()
                 .environmentObject(mealVM)
                 .environmentObject(userVM)
+                .environmentObject(orderVM)
 
         }
     }
