@@ -8,17 +8,16 @@
 import Foundation
 import FirebaseAuth
 import FirebaseFirestore
+import SwiftUI
 
 class OrderViewModel: ObservableObject {
     
     private let db = Firestore.firestore()
+    @EnvironmentObject var mealViewModel: MealViewModel
     
-    func submitOrder(mealIDs: [String], totalPrice: Double) {
-        
+    func submitOrder(mealIDs: [String], totalPrice: Double, completion: @escaping () -> Void) {
         guard let userID = Auth.auth().currentUser?.uid else { return }
-        
         let orderRef = db.collection("Users").document(userID).collection("Orders").document()
-
         let data: [String: Any] = [
             "date": Timestamp(date: Date()),
             "productIDs": mealIDs,
@@ -28,13 +27,15 @@ class OrderViewModel: ObservableObject {
         
         orderRef.setData(data) { (error) in
             if let error = error {
-//                self.updateAlert(title: "Error", message: error.localizedDescription)
+                print("error: \(error.localizedDescription)")
             } else {
-//                self.updateAlert(title: "Success", message: "Zamówienie złożone pomyślnie")
-                for meal in mealIDs {
-//                    self.db.collection("Users").document(userID).collection("Cart").document(product).delete()
+                orderRef.setData(data) { (error) in
+                    if let error = error {
+                        print("error deleting current cart: \(error.localizedDescription)")
+                    } else {
+                        completion()
+                    }
                 }
-//                self.getUserCart()
             }
         }
     }

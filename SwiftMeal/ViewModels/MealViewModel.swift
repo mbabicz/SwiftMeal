@@ -78,30 +78,42 @@ class MealViewModel: ObservableObject {
     }
     
     func fetchCartMeals() {
-        
-        let userRef = self.db.collection("Users").document(self.uuid!)
-        
-        userRef.getDocument { document, error in
-            guard let document = document, document.exists,
-                  let documentData = document.data(),
-                  let cartMeals = documentData["cart"] as? [String: Int] else {
-                return
-            }
-            let meals = cartMeals.compactMap { id, quantity -> Meal? in
-                return self.meals?.first(where: { $0.id == id })
-            }
-            var cartMealsDict: [Meal: Int] = [:]
-            for meal in meals {
-                if let quantity = cartMeals[meal.id] {
-                    cartMealsDict[meal] = quantity
-                }
-            }
-            DispatchQueue.main.async {
-                self.cartMeals = cartMealsDict
-                self.calculateTotalPrice()
+         let userRef = self.db.collection("Users").document(self.uuid!)
+         
+         userRef.getDocument { document, error in
+             guard let document = document, document.exists,
+                   let documentData = document.data(),
+                   let cartMeals = documentData["cart"] as? [String: Int] else {
+                 return
+             }
+             let meals = cartMeals.compactMap { id, quantity -> Meal? in
+                 return self.meals?.first(where: { $0.id == id })
+             }
+             var cartMealsDict: [Meal: Int] = [:]
+             for meal in meals {
+                 if let quantity = cartMeals[meal.id] {
+                     cartMealsDict[meal] = quantity
+                 }
+             }
+             DispatchQueue.main.async {
+                 self.cartMeals = cartMealsDict
+                 self.calculateTotalPrice()
+             }
+         }
+     }
+    
+    func deleteCurrentCart(){
+        self.db.collection("Users").document(self.uuid!).updateData(["cart": FieldValue.delete()]) { error in
+            if let error = error {
+                print("Cannot clear user cart: \(error.localizedDescription)")
+            } else {
+                print("User cart cleared")
+                self.cartMeals = [:]
+                self.fetchCartMeals()
             }
         }
     }
+
     
     func calculateTotalPrice(){
         var totalPrice = 0.0

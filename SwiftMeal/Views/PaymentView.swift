@@ -29,7 +29,9 @@ struct PaymentView: View {
                 Spacer()
                 Button {
                     let mealIDs = mealViewModel.cartMeals.keys.map { $0.id }
-                    orderViewModel.submitOrder(mealIDs: mealIDs, totalPrice: mealViewModel.totalCartPrice)
+                    orderViewModel.submitOrder(mealIDs: mealIDs, totalPrice: mealViewModel.totalCartPrice) {
+                        mealViewModel.deleteCurrentCart()
+                    }
                 } label: {
                     HStack() {
                         Image(systemName: "cart.fill")
