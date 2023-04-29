@@ -12,7 +12,6 @@ struct PaymentView: View {
     @EnvironmentObject var mealViewModel: MealViewModel
     @EnvironmentObject var orderViewModel: OrderViewModel
 
-
     var body: some View {
         NavigationView {
             
@@ -28,10 +27,14 @@ struct PaymentView: View {
                 
                 Spacer()
                 Button {
-                    let mealIDs = mealViewModel.cartMeals.keys.map { $0.id }
-                    orderViewModel.submitOrder(mealIDs: mealIDs, totalPrice: mealViewModel.totalCartPrice) {
-                        mealViewModel.deleteCurrentCart()
-                    }
+
+                    let mealQuantities = mealViewModel.cartMeals.reduce(into: [String:Int]()) { (result, tuple) in
+                          result[tuple.key.id] = tuple.value
+                      }
+                      orderViewModel.submitOrder(mealQuantities: mealQuantities, totalPrice: mealViewModel.totalCartPrice) {
+                          mealViewModel.deleteCurrentCart()
+                      }
+                    
                 } label: {
                     HStack() {
                         Image(systemName: "cart.fill")

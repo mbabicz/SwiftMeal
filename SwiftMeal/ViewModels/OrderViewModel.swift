@@ -13,14 +13,13 @@ import SwiftUI
 class OrderViewModel: ObservableObject {
     
     private let db = Firestore.firestore()
-    @EnvironmentObject var mealViewModel: MealViewModel
     
-    func submitOrder(mealIDs: [String], totalPrice: Double, completion: @escaping () -> Void) {
+    func submitOrder(mealQuantities: [String:Int], totalPrice: Double, completion: @escaping () -> Void) {
         guard let userID = Auth.auth().currentUser?.uid else { return }
         let orderRef = db.collection("Users").document(userID).collection("Orders").document()
         let data: [String: Any] = [
             "date": Timestamp(date: Date()),
-            "productIDs": mealIDs,
+            "products": mealQuantities,
             "status": "Ordered",
             "totalPrice": totalPrice
         ]
@@ -39,5 +38,6 @@ class OrderViewModel: ObservableObject {
             }
         }
     }
+
     
 }
