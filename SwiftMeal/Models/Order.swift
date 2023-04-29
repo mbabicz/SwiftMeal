@@ -6,17 +6,17 @@
 //
 
 import Foundation
+import Firebase
 
 
 struct Order: Identifiable, Hashable {
-    var id: String
-    var mealIDs: [String]
-    var date: Date
-    var status: String
-    var totalPrice: Double
+    let id: String
+    let date: Timestamp
+    let products: [String: Int]
+    let status: String
+    let totalPrice: Double
     
     var formattedTotalPrice : String{
         return String(format: "%.2f$", totalPrice)
     }
-    
 }
