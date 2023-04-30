@@ -17,12 +17,13 @@ enum Category: String, CaseIterable {
 struct MainView: View {
     
     @EnvironmentObject var mealViewModel: MealViewModel
+    @EnvironmentObject var orderViewModel: OrderViewModel
     @State private var selectedCategory: Category = .all
     
     @State private var showConfirmation = false
     @State private var showAddedPrice = false
     @State private var addedPrice: Double = 0.0
-    
+        
     var filteredMeals: [Meal] {
         if selectedCategory == .all {
             return mealViewModel.meals ?? []
@@ -107,7 +108,8 @@ struct MainView: View {
                                     RoundedRectangle(cornerRadius: 45)
                                         .stroke(.purple, lineWidth: 1)
                                 )
-                            Text("1")
+                            
+                            Text("\(orderViewModel.activeCount)")
                                 .font(.subheadline)
                                 .bold()
                                 .padding(.horizontal, 6)
@@ -120,6 +122,8 @@ struct MainView: View {
                                         .stroke(.purple, lineWidth: 1)
                                 )
                                 .offset(x: 21, y: -21)
+                                .opacity(orderViewModel.activeCount > 0 ? 1 : 0)
+                            
                         }
                     }
                     .offset(x: -145)
@@ -147,12 +151,14 @@ struct MainView: View {
                             self.showConfirmation = false
                         }
                     }
-                }                            
+                }
             }
         )
         .onAppear{
             mealViewModel.fetchCartMeals()
+            orderViewModel.getAllOrders()
         }
+        
     }
 }
 

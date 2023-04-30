@@ -15,6 +15,7 @@ struct Order: Identifiable, Hashable {
     let products: [String: Int]
     let status: String
     let totalPrice: Double
+    let isActive: Bool
     
     var formattedTotalPrice : String{
         return String(format: "%.2f$", totalPrice)

@@ -14,6 +14,9 @@ class OrderViewModel: ObservableObject {
     
     private let db = Firestore.firestore()
     let userID = Auth.auth().currentUser?.uid
+    @Published var orders: [Order] = []
+    @Published var activeCount = 0
+
     
     func submitOrder(mealQuantities: [String:Int], totalPrice: Double, completion: @escaping () -> Void) {
         let orderRef = db.collection("Users").document(userID!).collection("Orders").document()
@@ -21,6 +24,7 @@ class OrderViewModel: ObservableObject {
             "date": Timestamp(date: Date()),
             "products": mealQuantities,
             "status": "Ordered",
+            "isActive": true,
             "totalPrice": totalPrice
         ]
         
@@ -38,36 +42,35 @@ class OrderViewModel: ObservableObject {
             }
         }
     }
-    
-    func getAllOrders(completion: @escaping ([Order]) -> Void) {
-        guard let userID = Auth.auth().currentUser?.uid else { return }
-        let ordersRef = db.collection("Users").document(userID).collection("Orders")
-        
-        ordersRef.getDocuments { (snapshot, error) in
+
+    func getAllOrders() {
+        self.orders.removeAll(keepingCapacity: false)
+        let ordersRef = db.collection("Users").document(userID!).collection("Orders")
+        ordersRef.addSnapshotListener { (snapshot, error) in
             if let error = error {
                 print("Error getting orders: \(error.localizedDescription)")
                 return
             }
-            
-            var orders: [Order] = []
+            self.activeCount = 0
             
             for document in snapshot?.documents ?? [] {
                 guard let date = document.data()["date"] as? Timestamp,
                       let products = document.data()["products"] as? [String: Int],
                       let status = document.data()["status"] as? String,
+                      let isActive = document.data()["isActive"] as? Bool,
                       let totalPrice = document.data()["totalPrice"] as? Double else {
                     continue
                 }
                 
-                let order = Order(id: document.documentID, date: date, products: products, status: status, totalPrice: totalPrice)
-                orders.append(order)
+                let order = Order(id: document.documentID, date: date, products: products, status: status, totalPrice: totalPrice, isActive: isActive)
+                self.orders.append(order)
+                
+                if isActive {
+                    self.activeCount += 1
+                }
             }
-            
-            completion(orders)
         }
     }
-
-
 
     
 }
