@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2904857E29FED53C00B7FF2B /* OrderHistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2904857D29FED53B00B7FF2B /* OrderHistoryView.swift */; };
 		2905CCAB29F5429800D4F968 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2921201529DC65D4000661FB /* MainView.swift */; };
 		2905CCAC29F5429800D4F968 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2971E29129F1A1CF0077FCFC /* LoadingView.swift */; };
 		2905CCAD29F5429800D4F968 /* Meal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2921201129DC4AC5000661FB /* Meal.swift */; };
@@ -71,6 +72,7 @@
 /* Begin PBXFileReference section */
 		0A405FB74421A65E0599929F /* Pods-SwiftMeal-SwiftMealUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftMeal-SwiftMealUITests.release.xcconfig"; path = "Target Support Files/Pods-SwiftMeal-SwiftMealUITests/Pods-SwiftMeal-SwiftMealUITests.release.xcconfig"; sourceTree = "<group>"; };
 		254E401E1FA7D3EC1B7FD5E4 /* Pods-SwiftMeal.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftMeal.release.xcconfig"; path = "Target Support Files/Pods-SwiftMeal/Pods-SwiftMeal.release.xcconfig"; sourceTree = "<group>"; };
+		2904857D29FED53B00B7FF2B /* OrderHistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderHistoryView.swift; sourceTree = "<group>"; };
 		2905CCB829F81D9000D4F968 /* PaymentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentView.swift; sourceTree = "<group>"; };
 		2905CCBA29F823BF00D4F968 /* PaymentProductCart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentProductCart.swift; sourceTree = "<group>"; };
 		2905CCC029F83CF600D4F968 /* OrderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderViewModel.swift; sourceTree = "<group>"; };
@@ -229,6 +231,7 @@
 				2971E29729F2C64A0077FCFC /* ContentView.swift */,
 				2905CCB829F81D9000D4F968 /* PaymentView.swift */,
 				2905CCBA29F823BF00D4F968 /* PaymentProductCart.swift */,
+				2904857D29FED53B00B7FF2B /* OrderHistoryView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -536,6 +539,7 @@
 				29211FD129DB6DC0000661FB /* SwiftMealApp.swift in Sources */,
 				2971E28B29EDCAC40077FCFC /* CartProductView.swift in Sources */,
 				2971E28729EAD7DD0077FCFC /* CartView.swift in Sources */,
+				2904857E29FED53C00B7FF2B /* OrderHistoryView.swift in Sources */,
 				2905CCC329F83D0000D4F968 /* Order.swift in Sources */,
 				2905CCBB29F823BF00D4F968 /* PaymentProductCart.swift in Sources */,
 				2971E29829F2C64A0077FCFC /* ContentView.swift in Sources */,

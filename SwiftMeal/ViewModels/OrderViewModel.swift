@@ -54,7 +54,7 @@ class OrderViewModel: ObservableObject {
             self.activeCount = 0
             
             for document in snapshot?.documents ?? [] {
-                guard let date = document.data()["date"] as? Timestamp,
+                guard let timestamp = document.data()["date"] as? Timestamp,
                       let products = document.data()["products"] as? [String: Int],
                       let status = document.data()["status"] as? String,
                       let isActive = document.data()["isActive"] as? Bool,
@@ -62,6 +62,7 @@ class OrderViewModel: ObservableObject {
                     continue
                 }
                 
+                let date = timestamp.dateValue()
                 let order = Order(id: document.documentID, date: date, products: products, status: status, totalPrice: totalPrice, isActive: isActive)
                 self.orders.append(order)
                 

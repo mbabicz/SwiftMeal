@@ -94,7 +94,7 @@ struct MainView: View {
                         }
                     }
                     
-                    NavigationLink(destination: PaymentView()) {
+                    NavigationLink(destination: OrderHistoryView()) {
                         ZStack{
                             Image("burger.fill")
                                 .resizable()
