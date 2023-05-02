@@ -72,6 +72,5 @@ class OrderViewModel: ObservableObject {
             }
         }
     }
-
     
 }
