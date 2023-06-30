@@ -47,9 +47,10 @@
 		2971E29429F2C2360077FCFC /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2971E29329F2C2360077FCFC /* User.swift */; };
 		2971E29629F2C2590077FCFC /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2971E29529F2C2590077FCFC /* UserViewModel.swift */; };
 		2971E29829F2C64A0077FCFC /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2971E29729F2C64A0077FCFC /* ContentView.swift */; };
-		42E085E172307FF7A953629F /* Pods_SwiftMeal_SwiftMealUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C83C7543CD736280A86EF8DE /* Pods_SwiftMeal_SwiftMealUITests.framework */; };
-		A5638D2D85A70F0B9FBCFB1C /* Pods_SwiftMealTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 954EF3C3731B1B67D76EB6C5 /* Pods_SwiftMealTests.framework */; };
-		D32DC0335D9B64A453379FDA /* Pods_SwiftMeal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F076DDDA687BBC8112BD73B /* Pods_SwiftMeal.framework */; };
+		29A795E42A4F19DE0018824F /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 29A795E32A4F19DE0018824F /* FirebaseAuth */; };
+		29A795E62A4F19DE0018824F /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 29A795E52A4F19DE0018824F /* FirebaseFirestore */; };
+		29A795E82A4F19DE0018824F /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 29A795E72A4F19DE0018824F /* FirebaseFirestoreSwift */; };
+		29A795EA2A4F19DE0018824F /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 29A795E92A4F19DE0018824F /* FirebaseStorage */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,8 +71,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0A405FB74421A65E0599929F /* Pods-SwiftMeal-SwiftMealUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftMeal-SwiftMealUITests.release.xcconfig"; path = "Target Support Files/Pods-SwiftMeal-SwiftMealUITests/Pods-SwiftMeal-SwiftMealUITests.release.xcconfig"; sourceTree = "<group>"; };
-		254E401E1FA7D3EC1B7FD5E4 /* Pods-SwiftMeal.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftMeal.release.xcconfig"; path = "Target Support Files/Pods-SwiftMeal/Pods-SwiftMeal.release.xcconfig"; sourceTree = "<group>"; };
 		2904857D29FED53B00B7FF2B /* OrderHistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderHistoryView.swift; sourceTree = "<group>"; };
 		2905CCB829F81D9000D4F968 /* PaymentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentView.swift; sourceTree = "<group>"; };
 		2905CCBA29F823BF00D4F968 /* PaymentProductCart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentProductCart.swift; sourceTree = "<group>"; };
@@ -100,13 +99,6 @@
 		2971E29329F2C2360077FCFC /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		2971E29529F2C2590077FCFC /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
 		2971E29729F2C64A0077FCFC /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		2C6029A7BB2F05C195B318E9 /* Pods-SwiftMeal.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftMeal.debug.xcconfig"; path = "Target Support Files/Pods-SwiftMeal/Pods-SwiftMeal.debug.xcconfig"; sourceTree = "<group>"; };
-		487A804D19A4E3CC55D8A920 /* Pods-SwiftMeal-SwiftMealUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftMeal-SwiftMealUITests.debug.xcconfig"; path = "Target Support Files/Pods-SwiftMeal-SwiftMealUITests/Pods-SwiftMeal-SwiftMealUITests.debug.xcconfig"; sourceTree = "<group>"; };
-		8F076DDDA687BBC8112BD73B /* Pods_SwiftMeal.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftMeal.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		954EF3C3731B1B67D76EB6C5 /* Pods_SwiftMealTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftMealTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		C5738FBA1449195BE49417A2 /* Pods-SwiftMealTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftMealTests.release.xcconfig"; path = "Target Support Files/Pods-SwiftMealTests/Pods-SwiftMealTests.release.xcconfig"; sourceTree = "<group>"; };
-		C83C7543CD736280A86EF8DE /* Pods_SwiftMeal_SwiftMealUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftMeal_SwiftMealUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		E39B5AD3EA590ED6C27EA36F /* Pods-SwiftMealTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftMealTests.debug.xcconfig"; path = "Target Support Files/Pods-SwiftMealTests/Pods-SwiftMealTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,7 +106,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D32DC0335D9B64A453379FDA /* Pods_SwiftMeal.framework in Frameworks */,
+				29A795E42A4F19DE0018824F /* FirebaseAuth in Frameworks */,
+				29A795EA2A4F19DE0018824F /* FirebaseStorage in Frameworks */,
+				29A795E62A4F19DE0018824F /* FirebaseFirestore in Frameworks */,
+				29A795E82A4F19DE0018824F /* FirebaseFirestoreSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -122,7 +117,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A5638D2D85A70F0B9FBCFB1C /* Pods_SwiftMealTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -130,7 +124,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				42E085E172307FF7A953629F /* Pods_SwiftMeal_SwiftMealUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -144,8 +137,6 @@
 				29211FE029DB6DC2000661FB /* SwiftMealTests */,
 				29211FEA29DB6DC2000661FB /* SwiftMealUITests */,
 				29211FCE29DB6DC0000661FB /* Products */,
-				E3A88FC9ED7BD2A1AC52594E /* Pods */,
-				D768D8E837C8686FF81D4A76 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -245,29 +236,6 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
-		D768D8E837C8686FF81D4A76 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				8F076DDDA687BBC8112BD73B /* Pods_SwiftMeal.framework */,
-				C83C7543CD736280A86EF8DE /* Pods_SwiftMeal_SwiftMealUITests.framework */,
-				954EF3C3731B1B67D76EB6C5 /* Pods_SwiftMealTests.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		E3A88FC9ED7BD2A1AC52594E /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				2C6029A7BB2F05C195B318E9 /* Pods-SwiftMeal.debug.xcconfig */,
-				254E401E1FA7D3EC1B7FD5E4 /* Pods-SwiftMeal.release.xcconfig */,
-				487A804D19A4E3CC55D8A920 /* Pods-SwiftMeal-SwiftMealUITests.debug.xcconfig */,
-				0A405FB74421A65E0599929F /* Pods-SwiftMeal-SwiftMealUITests.release.xcconfig */,
-				E39B5AD3EA590ED6C27EA36F /* Pods-SwiftMealTests.debug.xcconfig */,
-				C5738FBA1449195BE49417A2 /* Pods-SwiftMealTests.release.xcconfig */,
-			);
-			path = Pods;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -275,17 +243,21 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 29211FF129DB6DC2000661FB /* Build configuration list for PBXNativeTarget "SwiftMeal" */;
 			buildPhases = (
-				E19EF1230EA4A13FE059B761 /* [CP] Check Pods Manifest.lock */,
 				29211FC929DB6DC0000661FB /* Sources */,
 				29211FCA29DB6DC0000661FB /* Frameworks */,
 				29211FCB29DB6DC0000661FB /* Resources */,
-				C92BD926380C8949C36E3E95 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = SwiftMeal;
+			packageProductDependencies = (
+				29A795E32A4F19DE0018824F /* FirebaseAuth */,
+				29A795E52A4F19DE0018824F /* FirebaseFirestore */,
+				29A795E72A4F19DE0018824F /* FirebaseFirestoreSwift */,
+				29A795E92A4F19DE0018824F /* FirebaseStorage */,
+			);
 			productName = SwiftMeal;
 			productReference = 29211FCD29DB6DC0000661FB /* SwiftMeal.app */;
 			productType = "com.apple.product-type.application";
@@ -362,6 +334,9 @@
 				Base,
 			);
 			mainGroup = 29211FC429DB6DC0000661FB;
+			packageReferences = (
+				29A795E22A4F19DE0018824F /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
 			productRefGroup = 29211FCE29DB6DC0000661FB /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -459,23 +434,6 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SwiftMeal-SwiftMealUITests/Pods-SwiftMeal-SwiftMealUITests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		C92BD926380C8949C36E3E95 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-SwiftMeal/Pods-SwiftMeal-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-SwiftMeal/Pods-SwiftMeal-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SwiftMeal/Pods-SwiftMeal-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		D69C114613727A3A0E9A6101 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -492,28 +450,6 @@
 			);
 			outputPaths = (
 				"$(DERIVED_FILE_DIR)/Pods-SwiftMeal-SwiftMealUITests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		E19EF1230EA4A13FE059B761 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-SwiftMeal-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -711,7 +647,6 @@
 		};
 		29211FF229DB6DC2000661FB /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2C6029A7BB2F05C195B318E9 /* Pods-SwiftMeal.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -745,7 +680,6 @@
 		};
 		29211FF329DB6DC2000661FB /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 254E401E1FA7D3EC1B7FD5E4 /* Pods-SwiftMeal.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -779,7 +713,6 @@
 		};
 		29211FF529DB6DC2000661FB /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E39B5AD3EA590ED6C27EA36F /* Pods-SwiftMealTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -800,7 +733,6 @@
 		};
 		29211FF629DB6DC2000661FB /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C5738FBA1449195BE49417A2 /* Pods-SwiftMealTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -821,7 +753,6 @@
 		};
 		29211FF829DB6DC2000661FB /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 487A804D19A4E3CC55D8A920 /* Pods-SwiftMeal-SwiftMealUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -840,7 +771,6 @@
 		};
 		29211FF929DB6DC2000661FB /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0A405FB74421A65E0599929F /* Pods-SwiftMeal-SwiftMealUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -897,6 +827,40 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		29A795E22A4F19DE0018824F /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 10.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		29A795E32A4F19DE0018824F /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 29A795E22A4F19DE0018824F /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		29A795E52A4F19DE0018824F /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 29A795E22A4F19DE0018824F /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
+		};
+		29A795E72A4F19DE0018824F /* FirebaseFirestoreSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 29A795E22A4F19DE0018824F /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestoreSwift;
+		};
+		29A795E92A4F19DE0018824F /* FirebaseStorage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 29A795E22A4F19DE0018824F /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseStorage;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 29211FC529DB6DC0000661FB /* Project object */;
 }
