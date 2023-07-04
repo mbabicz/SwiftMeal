@@ -7,7 +7,6 @@
 
 import Foundation
 
-
 struct Order: Identifiable, Hashable {
     let id: String
     let date: Date
