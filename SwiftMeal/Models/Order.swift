@@ -25,3 +25,9 @@ struct Order: Identifiable, Hashable {
         return dateFormatter.string(from: self.date)
     }
 }
+
+extension Order {
+    static var sampleOrder: Order {
+        return Order(id: "1", date: Date.now, products: ["RGfj6vb5Iep0PFSmmS5a" : 1], status: "Done", totalPrice: 3.49, isActive: true)
+    }
+}
