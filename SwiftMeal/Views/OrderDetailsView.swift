@@ -12,7 +12,14 @@ struct OrderDetailsView: View {
     var order: Order
 
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        Text(order.id)
+        Text("\(order.date)")
+        Text(order.formattedDate)
+        Text(order.formattedTotalPrice)
+        Text(order.status.name)
+        Text(String(order.isActive)) 
+
+
     }
 }
 

@@ -23,7 +23,7 @@ class OrderViewModel: ObservableObject {
         let data: [String: Any] = [
             "date": Timestamp(date: Date()),
             "products": mealQuantities,
-            "status": "Ordered",
+            "status": OrderStatus.ordered.rawValue,
             "isActive": true,
             "totalPrice": totalPrice
         ]
@@ -55,12 +55,13 @@ class OrderViewModel: ObservableObject {
             
             for document in snapshot?.documents ?? [] {
                 guard let timestamp = document.data()["date"] as? Timestamp,
-                      let products = document.data()["products"] as? [String: Int],
-                      let status = document.data()["status"] as? String,
-                      let isActive = document.data()["isActive"] as? Bool,
-                      let totalPrice = document.data()["totalPrice"] as? Double else {
-                    continue
-                }
+                       let products = document.data()["products"] as? [String: Int],
+                       let statusInt = document.data()["status"] as? Int,
+                       let status = OrderStatus(rawValue: statusInt),
+                       let isActive = document.data()["isActive"] as? Bool,
+                       let totalPrice = document.data()["totalPrice"] as? Double else {
+                     continue
+                 }
                 
                 let date = timestamp.dateValue()
                 let order = Order(id: document.documentID, date: date, products: products, status: status, totalPrice: totalPrice, isActive: isActive)

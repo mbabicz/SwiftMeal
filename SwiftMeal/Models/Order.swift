@@ -11,7 +11,7 @@ struct Order: Identifiable, Hashable {
     let id: String
     let date: Date
     let products: [String: Int]
-    let status: String
+    let status: OrderStatus
     let totalPrice: Double
     let isActive: Bool
     
@@ -28,6 +28,6 @@ struct Order: Identifiable, Hashable {
 
 extension Order {
     static var sampleOrder: Order {
-        return Order(id: "1", date: Date.now, products: ["RGfj6vb5Iep0PFSmmS5a" : 1], status: "Done", totalPrice: 3.49, isActive: true)
+        return Order(id: "1", date: Date.now, products: ["RGfj6vb5Iep0PFSmmS5a" : 1], status: .delivery, totalPrice: 3.49, isActive: true)
     }
 }

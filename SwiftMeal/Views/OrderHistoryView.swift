@@ -70,7 +70,7 @@ struct OrderHistoryCardView: View {
                 HStack{
                     Text(order.formattedDate).foregroundColor(.gray)
                     Spacer()
-                    Text(order.status).foregroundColor(order.isActive ? .green : .black)
+                    Text(order.status.name).foregroundColor(order.isActive ? .green : .black)
                 }
                 .padding(.vertical)
                 

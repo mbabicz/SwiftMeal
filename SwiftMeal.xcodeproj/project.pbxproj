@@ -47,6 +47,7 @@
 		2971E29429F2C2360077FCFC /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2971E29329F2C2360077FCFC /* User.swift */; };
 		2971E29629F2C2590077FCFC /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2971E29529F2C2590077FCFC /* UserViewModel.swift */; };
 		2971E29829F2C64A0077FCFC /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2971E29729F2C64A0077FCFC /* ContentView.swift */; };
+		2991C6C32A60388900581AC5 /* OrderStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2991C6C22A60388900581AC5 /* OrderStatus.swift */; };
 		29A795E42A4F19DE0018824F /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 29A795E32A4F19DE0018824F /* FirebaseAuth */; };
 		29A795E62A4F19DE0018824F /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 29A795E52A4F19DE0018824F /* FirebaseFirestore */; };
 		29A795E82A4F19DE0018824F /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 29A795E72A4F19DE0018824F /* FirebaseFirestoreSwift */; };
@@ -101,6 +102,7 @@
 		2971E29329F2C2360077FCFC /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		2971E29529F2C2590077FCFC /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
 		2971E29729F2C64A0077FCFC /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		2991C6C22A60388900581AC5 /* OrderStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderStatus.swift; sourceTree = "<group>"; };
 		29A979DD2A54A42F003A2168 /* CategoryPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryPicker.swift; sourceTree = "<group>"; };
 		29A979E12A5F3FE8003A2168 /* OrderDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderDetailsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -200,6 +202,7 @@
 				2921201129DC4AC5000661FB /* Meal.swift */,
 				2971E29329F2C2360077FCFC /* User.swift */,
 				2905CCC229F83D0000D4F968 /* Order.swift */,
+				2991C6C22A60388900581AC5 /* OrderStatus.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -483,6 +486,7 @@
 				2971E28B29EDCAC40077FCFC /* CartProductView.swift in Sources */,
 				2971E28729EAD7DD0077FCFC /* CartView.swift in Sources */,
 				2904857E29FED53C00B7FF2B /* OrderHistoryView.swift in Sources */,
+				2991C6C32A60388900581AC5 /* OrderStatus.swift in Sources */,
 				2905CCC329F83D0000D4F968 /* Order.swift in Sources */,
 				2905CCBB29F823BF00D4F968 /* PaymentProductCart.swift in Sources */,
 				2971E29829F2C64A0077FCFC /* ContentView.swift in Sources */,
