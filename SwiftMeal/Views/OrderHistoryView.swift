@@ -11,7 +11,6 @@ struct OrderHistoryView: View {
     
     @EnvironmentObject var orderViewModel: OrderViewModel
     
-    
     var body: some View {
         
         let activeOrders = orderViewModel.orders.filter { $0.isActive }

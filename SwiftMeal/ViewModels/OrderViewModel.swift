@@ -44,7 +44,6 @@ class OrderViewModel: ObservableObject {
     }
 
     func getAllOrders() {
-        self.orders.removeAll(keepingCapacity: false)
         let ordersRef = db.collection("Users").document(userID!).collection("Orders")
         ordersRef.addSnapshotListener { (snapshot, error) in
             if let error = error {
@@ -52,7 +51,8 @@ class OrderViewModel: ObservableObject {
                 return
             }
             self.activeCount = 0
-            
+            self.orders.removeAll(keepingCapacity: false)
+
             for document in snapshot?.documents ?? [] {
                 guard let timestamp = document.data()["date"] as? Timestamp,
                        let products = document.data()["products"] as? [String: Int],
