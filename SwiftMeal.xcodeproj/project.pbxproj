@@ -247,13 +247,9 @@
 		29211FC429DB6DC0000661FB = {
 			isa = PBXGroup;
 			children = (
+				29272FD92A6C6CF3008BDFE1 /* SwiftMealDelivery */,
+				29272FD82A6C6CE5008BDFE1 /* SwiftMeal */,
 				29272FBE2A696272008BDFE1 /* Shared */,
-				29211FCF29DB6DC0000661FB /* SwiftMeal */,
-				29211FE029DB6DC2000661FB /* SwiftMealTests */,
-				29211FEA29DB6DC2000661FB /* SwiftMealUITests */,
-				290F252E2A6182B10032BD56 /* SwiftMealDelivery */,
-				290F253F2A6182B40032BD56 /* SwiftMealDeliveryTests */,
-				290F25492A6182B40032BD56 /* SwiftMealDeliveryUITests */,
 				29211FCE29DB6DC0000661FB /* Products */,
 				29272FC72A69648C008BDFE1 /* Frameworks */,
 			);
@@ -398,6 +394,26 @@
 				29272FD62A6C6B1E008BDFE1 /* HomeView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		29272FD82A6C6CE5008BDFE1 /* SwiftMeal */ = {
+			isa = PBXGroup;
+			children = (
+				29211FCF29DB6DC0000661FB /* SwiftMeal */,
+				29211FE029DB6DC2000661FB /* SwiftMealTests */,
+				29211FEA29DB6DC2000661FB /* SwiftMealUITests */,
+			);
+			path = SwiftMeal;
+			sourceTree = "<group>";
+		};
+		29272FD92A6C6CF3008BDFE1 /* SwiftMealDelivery */ = {
+			isa = PBXGroup;
+			children = (
+				290F252E2A6182B10032BD56 /* SwiftMealDelivery */,
+				290F253F2A6182B40032BD56 /* SwiftMealDeliveryTests */,
+				290F25492A6182B40032BD56 /* SwiftMealDeliveryUITests */,
+			);
+			path = SwiftMealDelivery;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -846,7 +862,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"SwiftMealDelivery/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"SwiftMealDelivery/SwiftMealDelivery/Preview Content\"";
 				DEVELOPMENT_TEAM = TU72F4GFFV;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -876,7 +892,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"SwiftMealDelivery/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"SwiftMealDelivery/SwiftMealDelivery/Preview Content\"";
 				DEVELOPMENT_TEAM = TU72F4GFFV;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -1097,7 +1113,7 @@
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"SwiftMeal/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"SwiftMeal/SwiftMeal/Preview Content\"";
 				DEVELOPMENT_TEAM = TU72F4GFFV;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -1130,7 +1146,7 @@
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"SwiftMeal/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"SwiftMeal/SwiftMeal/Preview Content\"";
 				DEVELOPMENT_TEAM = TU72F4GFFV;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
