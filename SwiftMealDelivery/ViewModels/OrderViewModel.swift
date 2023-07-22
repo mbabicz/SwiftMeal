@@ -14,7 +14,6 @@ class OrderViewModel: ObservableObject {
     private let db = Firestore.firestore()
     @Published var activeOrders: [Order] = []
 
-
     func getActiveOrders() {
         let ordersRef = db.collection("Users")
         ordersRef.getDocuments { (querySnapshot, error) in
