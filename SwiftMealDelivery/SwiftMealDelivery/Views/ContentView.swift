@@ -24,7 +24,7 @@ struct ContentView: View {
         }
         .padding()
         .onAppear{
-            orderViewModel.getActiveOrders()
+            orderViewModel.fetchActiveOrders()
         }
     }
 }
