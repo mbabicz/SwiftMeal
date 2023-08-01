@@ -74,6 +74,12 @@
 		29A795EA2A4F19DE0018824F /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 29A795E92A4F19DE0018824F /* FirebaseStorage */; };
 		29A979DE2A54A42F003A2168 /* CategoryPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29A979DD2A54A42F003A2168 /* CategoryPicker.swift */; };
 		29A979E22A5F3FE8003A2168 /* OrderDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29A979E12A5F3FE8003A2168 /* OrderDetailsView.swift */; };
+		29C649D22A76F67E00C12A09 /* ActiveOrderCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C649D12A76F67E00C12A09 /* ActiveOrderCard.swift */; };
+		29C649D52A79448F00C12A09 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C649D42A79448F00C12A09 /* User.swift */; };
+		29C649D82A7944BA00C12A09 /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C649D72A7944BA00C12A09 /* AuthViewModel.swift */; };
+		29C649DA2A79453500C12A09 /* AuthenticationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C649D92A79453500C12A09 /* AuthenticationView.swift */; };
+		29C649DD2A79922900C12A09 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C649DC2A79922900C12A09 /* SignUpView.swift */; };
+		29C649DF2A79923200C12A09 /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C649DE2A79923200C12A09 /* SignInView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -151,6 +157,12 @@
 		2991C6C22A60388900581AC5 /* OrderStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderStatus.swift; sourceTree = "<group>"; };
 		29A979DD2A54A42F003A2168 /* CategoryPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryPicker.swift; sourceTree = "<group>"; };
 		29A979E12A5F3FE8003A2168 /* OrderDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderDetailsView.swift; sourceTree = "<group>"; };
+		29C649D12A76F67E00C12A09 /* ActiveOrderCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActiveOrderCard.swift; sourceTree = "<group>"; };
+		29C649D42A79448F00C12A09 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		29C649D72A7944BA00C12A09 /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
+		29C649D92A79453500C12A09 /* AuthenticationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationView.swift; sourceTree = "<group>"; };
+		29C649DC2A79922900C12A09 /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
+		29C649DE2A79923200C12A09 /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -210,6 +222,7 @@
 		290F252E2A6182B10032BD56 /* SwiftMealDelivery */ = {
 			isa = PBXGroup;
 			children = (
+				29C649D32A79448200C12A09 /* Models */,
 				29272FD52A6C6B06008BDFE1 /* Views */,
 				29272FC42A6963D9008BDFE1 /* ViewModels */,
 				290F252F2A6182B10032BD56 /* SwiftMealDeliveryApp.swift */,
@@ -376,6 +389,7 @@
 			isa = PBXGroup;
 			children = (
 				29272FC52A696412008BDFE1 /* OrderViewModel.swift */,
+				29C649D72A7944BA00C12A09 /* AuthViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -390,8 +404,10 @@
 		29272FD52A6C6B06008BDFE1 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				29C649DB2A79920300C12A09 /* Auth */,
 				290F25312A6182B10032BD56 /* ContentView.swift */,
 				29272FD62A6C6B1E008BDFE1 /* HomeView.swift */,
+				29C649D12A76F67E00C12A09 /* ActiveOrderCard.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -414,6 +430,24 @@
 				290F25492A6182B40032BD56 /* SwiftMealDeliveryUITests */,
 			);
 			path = SwiftMealDelivery;
+			sourceTree = "<group>";
+		};
+		29C649D32A79448200C12A09 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				29C649D42A79448F00C12A09 /* User.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		29C649DB2A79920300C12A09 /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				29C649D92A79453500C12A09 /* AuthenticationView.swift */,
+				29C649DC2A79922900C12A09 /* SignUpView.swift */,
+				29C649DE2A79923200C12A09 /* SignInView.swift */,
+			);
+			path = Auth;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -741,10 +775,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				29272FC12A696393008BDFE1 /* Order.swift in Sources */,
+				29C649D22A76F67E00C12A09 /* ActiveOrderCard.swift in Sources */,
 				290F25322A6182B10032BD56 /* ContentView.swift in Sources */,
 				290F25302A6182B10032BD56 /* SwiftMealDeliveryApp.swift in Sources */,
+				29C649DA2A79453500C12A09 /* AuthenticationView.swift in Sources */,
+				29C649DD2A79922900C12A09 /* SignUpView.swift in Sources */,
+				29C649DF2A79923200C12A09 /* SignInView.swift in Sources */,
+				29C649D52A79448F00C12A09 /* User.swift in Sources */,
 				29272FD72A6C6B1E008BDFE1 /* HomeView.swift in Sources */,
 				29272FD12A696A15008BDFE1 /* OrderStatus.swift in Sources */,
+				29C649D82A7944BA00C12A09 /* AuthViewModel.swift in Sources */,
 				29272FC62A696412008BDFE1 /* OrderViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

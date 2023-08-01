@@ -8,24 +8,15 @@
 import SwiftUI
 
 struct ContentView: View {
-
+    
     @EnvironmentObject var orderViewModel: OrderViewModel
-
+    
     var body: some View {
-        VStack {
-            if !orderViewModel.activeOrders.isEmpty{
-                Text("Active orders")
-                    .font(.title)
-                ForEach(orderViewModel.activeOrders) { order in
-                    Text(order.id)
-                }
-            }
-            Spacer()
-        }
-        .padding()
-        .onAppear{
-            orderViewModel.fetchActiveOrders()
-        }
+        AuthenticationView()
+//        HomeView()
+//            .onAppear{
+//                orderViewModel.fetchActiveOrders()
+//            }
     }
 }
 

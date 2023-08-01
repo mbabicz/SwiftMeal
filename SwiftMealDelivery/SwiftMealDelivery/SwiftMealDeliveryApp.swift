@@ -24,10 +24,12 @@ struct SwiftMealDeliveryApp: App {
 
     var body: some Scene {
         WindowGroup {
+            let authVM = AuthViewModel()
             let orderVM = OrderViewModel()
 
             ContentView()
                 .environmentObject(orderVM)
+                .environmentObject(authVM)
         }
     }
 }

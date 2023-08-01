@@ -6,3 +6,22 @@
 //
 
 import Foundation
+import SwiftUI
+
+struct HomeView: View {
+    
+    @EnvironmentObject var orderViewModel: OrderViewModel
+
+    var body: some View {
+        
+        if !orderViewModel.activeOrders.isEmpty{
+            Text("Active orders")
+                .font(.title)
+            ScrollView {
+                ForEach(orderViewModel.activeOrders) { order in
+                    ActiveOrderCard(order: order)
+                }
+            }
+        }
+    }
+}
