@@ -35,31 +35,39 @@ struct AuthenticationView: View {
                     Spacer()
                     
                     Button(action: {
-                        vm.activeSheet = .signIn
+                        withAnimation{
+                            vm.activeSheet = .signIn
+                        }
                     }) {
-                        Text("Sign In")
+                        Text("Log in")
+                            .foregroundColor(.white)
+                            .padding()
+                            .frame(maxWidth: .infinity)
+                            .background(Color.orange)
+                            .cornerRadius(12)
+                            .background(
+                                RoundedRectangle(cornerRadius: 12)
+                                    .stroke(Color.black, lineWidth: 1)
+                                )
+                    }
+                    .padding(.bottom, 10)
+                    
+                    Button(action: {
+                        withAnimation{
+                            vm.activeSheet = .signUp
+                        }
+                    }) {
+                        Text("New account")
                             .foregroundColor(.white)
                             .padding()
                             .frame(maxWidth: .infinity)
                             .background(Color.black)
-                            .cornerRadius(10)
-                    }
-                    
-                    Button(action: {
-                        vm.activeSheet = .signUp
-                    }) {
-                        Text("Sign Up")
-                            .foregroundColor(.black)
-                            .padding()
-                            .frame(maxWidth: .infinity)
-                            .background(
-                                RoundedRectangle(cornerRadius: 10)
-                                    .stroke(Color.black, lineWidth: 1)
-                            )
+                            .cornerRadius(12)
                     }
                     Spacer()
                 }
                 .padding()
+                .padding(.horizontal)
                 
                 Spacer()
                 

@@ -41,6 +41,11 @@ struct SignUpView: View {
             Spacer(minLength: 20)
             
             if showOptions {
+                Text("Create a new account!")
+                    .frame(alignment: .trailing)
+                    .font(.custom("HelveticaNeue", size: 18))
+                    .foregroundColor(.gray)
+                
                 Button(action: {
                     // google auth
                 }) {
@@ -49,7 +54,7 @@ struct SignUpView: View {
                             .resizable()
                             .scaledToFit()
                             .frame(width: 20)
-                        Text("Sign up with Google")
+                        Text("Continue with Google")
                         
                         Spacer()
                     }
@@ -73,7 +78,7 @@ struct SignUpView: View {
                             .resizable()
                             .scaledToFit()
                             .frame(width: 20)
-                        Text("Sign up with Email")
+                        Text("Continue with Email")
                         
                         Spacer()
                     }
@@ -140,6 +145,8 @@ struct SignUpView: View {
                             .padding()
                             .frame(maxWidth: .infinity)
                             .background(Color.gray.opacity(0.2))
+                            .foregroundColor(.black)
+
                             .cornerRadius(12)
                             .overlay(RoundedRectangle(cornerRadius: 12).stroke(.black, lineWidth: 0.5))
                     }
