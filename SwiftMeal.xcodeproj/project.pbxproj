@@ -80,6 +80,7 @@
 		29C649DA2A79453500C12A09 /* AuthenticationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C649D92A79453500C12A09 /* AuthenticationView.swift */; };
 		29C649DD2A79922900C12A09 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C649DC2A79922900C12A09 /* SignUpView.swift */; };
 		29C649DF2A79923200C12A09 /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C649DE2A79923200C12A09 /* SignInView.swift */; };
+		29C649E02A7BE42600C12A09 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 29211FD429DB6DC1000661FB /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -284,12 +285,12 @@
 		29211FCF29DB6DC0000661FB /* SwiftMeal */ = {
 			isa = PBXGroup;
 			children = (
+				29211FD429DB6DC1000661FB /* Assets.xcassets */,
 				2921201929DC948B000661FB /* Extensions */,
 				2921201029DC4AB6000661FB /* Views */,
 				2921200F29DC4AAD000661FB /* ViewModels */,
 				2921200E29DC4A96000661FB /* Models */,
 				29211FD029DB6DC0000661FB /* SwiftMealApp.swift */,
-				29211FD429DB6DC1000661FB /* Assets.xcassets */,
 				29211FD629DB6DC1000661FB /* Preview Content */,
 			);
 			path = SwiftMeal;
@@ -642,6 +643,7 @@
 			files = (
 				290F25372A6182B30032BD56 /* Preview Assets.xcassets in Resources */,
 				290F25342A6182B30032BD56 /* Assets.xcassets in Resources */,
+				29C649E02A7BE42600C12A09 /* Assets.xcassets in Resources */,
 				29272FBF2A696299008BDFE1 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
