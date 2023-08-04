@@ -6,3 +6,10 @@
 //
 
 import Foundation
+
+struct User: Codable {
+    
+    var signUpDate: Date
+    var userEmail: String
+    
+}

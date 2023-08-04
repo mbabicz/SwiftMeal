@@ -10,13 +10,13 @@ import SwiftUI
 struct SignUpView: View {
     
     @EnvironmentObject var vm: AuthViewModel
-
+    
     @State private var showEmailForm = false
     @State private var showOptions = true
     @State private var email = ""
     @State private var password = ""
     @State private var passwordConfirmation = ""
-
+    
     var body: some View {
         VStack(spacing: 20) {
             
@@ -64,7 +64,7 @@ struct SignUpView: View {
                     .cornerRadius(12)
                     .foregroundColor(.black)
                     .overlay(RoundedRectangle(cornerRadius: 12).stroke(.black, lineWidth: 0.5))
-
+                    
                 }
                 
                 Button(action: {
@@ -88,7 +88,7 @@ struct SignUpView: View {
                     .cornerRadius(12)
                     .foregroundColor(.white)
                     .overlay(RoundedRectangle(cornerRadius: 12).stroke(.black, lineWidth: 0.5))
-
+                    
                 }
                 
                 Spacer()
@@ -103,7 +103,7 @@ struct SignUpView: View {
                     }
                     .foregroundColor(.black)
                 }
-
+                
             }
             
             if showEmailForm {
@@ -124,16 +124,22 @@ struct SignUpView: View {
                         .padding(.bottom)
                     
                     Button(action: {
-                        // e-mail auth
+                        if (!email.isEmpty && !password.isEmpty){
+                            vm.signUp(email: email, password: password)
+                        } else{
+                            vm.alertTitle = "Error"
+                            vm.alertMessage = "Pola nie mogą by puste"
+                            vm.showingAlert = true
+                        }
                     }) {
-                        Text("Sign Up")
-                            .padding()
-                            .frame(maxWidth: .infinity)
-                            .background(Color.orange)
-                            .cornerRadius(12)
-                            .foregroundColor(.white)
-                            .overlay(RoundedRectangle(cornerRadius: 12).stroke(.black, lineWidth: 0.5))
-                    }
+                            Text("Sign Up")
+                                .padding()
+                                .frame(maxWidth: .infinity)
+                                .background(Color.orange)
+                                .cornerRadius(12)
+                                .foregroundColor(.white)
+                                .overlay(RoundedRectangle(cornerRadius: 12).stroke(.black, lineWidth: 0.5))
+                        }
                     
                     Button(action: {
                         withAnimation {
@@ -146,7 +152,7 @@ struct SignUpView: View {
                             .frame(maxWidth: .infinity)
                             .background(Color.gray.opacity(0.2))
                             .foregroundColor(.black)
-
+                        
                             .cornerRadius(12)
                             .overlay(RoundedRectangle(cornerRadius: 12).stroke(.black, lineWidth: 0.5))
                     }

@@ -10,15 +10,15 @@ import SwiftUI
 
 struct HomeView: View {
     
-    @EnvironmentObject var orderViewModel: OrderViewModel
+    @EnvironmentObject var orderVM: OrderViewModel
 
     var body: some View {
         
-        if !orderViewModel.activeOrders.isEmpty{
+        if !orderVM.activeOrders.isEmpty{
             Text("Active orders")
                 .font(.title)
             ScrollView {
-                ForEach(orderViewModel.activeOrders) { order in
+                ForEach(orderVM.activeOrders) { order in
                     ActiveOrderCard(order: order)
                 }
             }

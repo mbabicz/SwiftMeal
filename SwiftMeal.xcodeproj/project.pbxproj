@@ -81,6 +81,8 @@
 		29C649DD2A79922900C12A09 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C649DC2A79922900C12A09 /* SignUpView.swift */; };
 		29C649DF2A79923200C12A09 /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C649DE2A79923200C12A09 /* SignInView.swift */; };
 		29C649E02A7BE42600C12A09 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 29211FD429DB6DC1000661FB /* Assets.xcassets */; };
+		29C649E22A7D89E100C12A09 /* SwiftMealDelivery-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 29C649E12A7D89E100C12A09 /* SwiftMealDelivery-Info.plist */; };
+		29C649E42A7D95A100C12A09 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C649E32A7D95A100C12A09 /* LoadingView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -164,6 +166,8 @@
 		29C649D92A79453500C12A09 /* AuthenticationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationView.swift; sourceTree = "<group>"; };
 		29C649DC2A79922900C12A09 /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
 		29C649DE2A79923200C12A09 /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
+		29C649E12A7D89E100C12A09 /* SwiftMealDelivery-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "SwiftMealDelivery-Info.plist"; sourceTree = "<group>"; };
+		29C649E32A7D95A100C12A09 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -223,6 +227,7 @@
 		290F252E2A6182B10032BD56 /* SwiftMealDelivery */ = {
 			isa = PBXGroup;
 			children = (
+				29C649E12A7D89E100C12A09 /* SwiftMealDelivery-Info.plist */,
 				29C649D32A79448200C12A09 /* Models */,
 				29272FD52A6C6B06008BDFE1 /* Views */,
 				29272FC42A6963D9008BDFE1 /* ViewModels */,
@@ -409,6 +414,7 @@
 				290F25312A6182B10032BD56 /* ContentView.swift */,
 				29272FD62A6C6B1E008BDFE1 /* HomeView.swift */,
 				29C649D12A76F67E00C12A09 /* ActiveOrderCard.swift */,
+				29C649E32A7D95A100C12A09 /* LoadingView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -643,6 +649,7 @@
 			files = (
 				290F25372A6182B30032BD56 /* Preview Assets.xcassets in Resources */,
 				290F25342A6182B30032BD56 /* Assets.xcassets in Resources */,
+				29C649E22A7D89E100C12A09 /* SwiftMealDelivery-Info.plist in Resources */,
 				29C649E02A7BE42600C12A09 /* Assets.xcassets in Resources */,
 				29272FBF2A696299008BDFE1 /* GoogleService-Info.plist in Resources */,
 			);
@@ -787,6 +794,7 @@
 				29272FD72A6C6B1E008BDFE1 /* HomeView.swift in Sources */,
 				29272FD12A696A15008BDFE1 /* OrderStatus.swift in Sources */,
 				29C649D82A7944BA00C12A09 /* AuthViewModel.swift in Sources */,
+				29C649E42A7D95A100C12A09 /* LoadingView.swift in Sources */,
 				29272FC62A696412008BDFE1 /* OrderViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

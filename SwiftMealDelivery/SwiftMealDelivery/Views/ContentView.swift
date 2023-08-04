@@ -9,14 +9,25 @@ import SwiftUI
 
 struct ContentView: View {
     
-    @EnvironmentObject var orderViewModel: OrderViewModel
+    @EnvironmentObject var authVM: AuthViewModel
+    @EnvironmentObject var orderVM: OrderViewModel
+
     
     var body: some View {
-        AuthenticationView()
-//        HomeView()
-//            .onAppear{
-//                orderViewModel.fetchActiveOrders()
-//            }
+        NavigationView {
+            if !authVM.userIsAuthenticated {
+                AuthenticationView()
+            } else if !authVM.userIsAuthenticatedAndSynced {
+                LoadingView()
+            } else {
+                HomeView()
+            }
+        }
+        .onAppear{
+            if authVM.userIsAuthenticated{
+                authVM.syncUser()
+            }
+        }
     }
 }
 

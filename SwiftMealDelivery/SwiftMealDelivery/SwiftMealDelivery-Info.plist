@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>420090463908-mb5lctmr0qmugp5c09gho85uga69ebq1.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.420090463908-mb5lctmr0qmugp5c09gho85uga69ebq1</string>
+	<key>API_KEY</key>
+	<string>AIzaSyDsPvgEIYQk46TQSBcLmJH4ij6rhPWkLUs</string>
+	<key>GCM_SENDER_ID</key>
+	<string>420090463908</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>mbabicz</string>
+	<key>PROJECT_ID</key>
+	<string>swiftmealdelivery-ed0c1</string>
+	<key>STORAGE_BUCKET</key>
+	<string>swiftmealdelivery-ed0c1.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:420090463908:ios:df9c665d3c6083086a4831</string>
+</dict>
+</plist>
