@@ -70,7 +70,7 @@ struct SignInView: View {
                     
                     AuthButton(imageName: "envelope", text: "Sign In", backgroundColor: .orange, action: {
                         if !email.isEmpty && !password.isEmpty {
-//                            vm.signUp(email: email, password: password)
+                            vm.signIn(email: email, password: password)
                         } else {
                             vm.updateAlert(title: "Error", message: "Fields cannot be empty")
                         }

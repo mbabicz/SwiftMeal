@@ -88,4 +88,16 @@ class AuthViewModel: ObservableObject {
         }
     }
     
+    func signIn(email: String, password: String) {
+        auth.signIn(withEmail: email, password: password) { (result, error) in
+            if let error = error {
+                self.updateAlert(title: "Error", message: error.localizedDescription)
+            } else {
+                DispatchQueue.main.async {
+                    self.syncUser()
+                }
+            }
+        }
+    }
+    
 }
