@@ -14,19 +14,22 @@ struct ContentView: View {
 
     
     var body: some View {
-        NavigationView {
+        ZStack {
             if !authVM.userIsAuthenticated {
                 AuthenticationView()
             } else if !authVM.userIsAuthenticatedAndSynced {
                 LoadingView()
             } else {
-                HomeView()
+                NavigationView{
+                    HomeView()
+                }
             }
         }
         .onAppear{
             if authVM.userIsAuthenticated{
                 authVM.syncUser()
             }
+            orderVM.fetchActiveOrders()
         }
     }
 }

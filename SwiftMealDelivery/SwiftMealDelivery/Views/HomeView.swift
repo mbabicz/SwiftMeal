@@ -13,13 +13,14 @@ struct HomeView: View {
     @EnvironmentObject var orderVM: OrderViewModel
 
     var body: some View {
-        
-        if !orderVM.activeOrders.isEmpty{
-            Text("Active orders")
-                .font(.title)
-            ScrollView {
-                ForEach(orderVM.activeOrders) { order in
-                    ActiveOrderCard(order: order)
+        VStack{
+            if !orderVM.activeOrders.isEmpty{
+                Text("Active orders")
+                    .font(.title)
+                ScrollView {
+                    ForEach(orderVM.activeOrders) { order in
+                        ActiveOrderCard(order: order)
+                    }
                 }
             }
         }
