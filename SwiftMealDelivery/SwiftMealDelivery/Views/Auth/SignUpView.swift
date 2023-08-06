@@ -24,21 +24,7 @@ struct SignUpView: View {
             
             Spacer()
             
-            HStack {
-                Image("burger")
-                    .resizable()
-                    .aspectRatio(contentMode: .fill)
-                    .frame(width: 65, height: 65)
-                VStack(alignment: .leading) {
-                    Text("SwiftMeal")
-                        .font(.custom("HelveticaNeue-Bold", size: 45))
-                        .fontWeight(.bold)
-                        .foregroundColor(.orange)
-                    Text("Delivery")
-                        .font(.custom("HelveticaNeue-Bold", size: 20))
-                        .foregroundColor(.gray)
-                }
-            }
+            LogoView()
             
             Spacer(minLength: 20)
             
@@ -98,69 +84,3 @@ struct SignUpView: View {
         .padding()
     }
 }
-
-struct AuthButton: View {
-    let imageName: String
-    let text: String
-    let backgroundColor: Color
-    let action: () -> Void
-    
-    var body: some View {
-        Button(action: action) {
-            HStack {
-                Image(imageName)
-                    .resizable()
-                    .scaledToFit()
-                    .frame(width: 20)
-                Text(text)
-                    .foregroundColor(.black)
-                
-                Spacer()
-            }
-            .padding()
-            .frame(maxWidth: .infinity)
-            .background(backgroundColor)
-            .cornerRadius(12)
-            .foregroundColor(.white)
-            .overlay(RoundedRectangle(cornerRadius: 12).stroke(.black, lineWidth: 0.5))
-        }
-    }
-}
-
-struct TogglePasswordView: View {
-    @Binding var isSecured: Bool
-    let placeholder: String
-    @Binding var text: String
-    
-    var body: some View {
-        ZStack(alignment: .trailing) {
-            if isSecured {
-                SecureField(placeholder, text: $text)
-            } else {
-                TextField(placeholder, text: $text)
-            }
-            Button(action: {
-                isSecured.toggle()
-            }) {
-                Image(systemName: isSecured ? "eye.slash" : "eye")
-                    .accentColor(.gray)
-            }
-        }
-        .padding()
-        .background(Color.gray.opacity(0.2))
-        .cornerRadius(12)
-    }
-}
-
-struct AuthTextField: View {
-    let placeholder: String
-    @Binding var text: String
-    
-    var body: some View {
-        TextField(placeholder, text: $text)
-            .padding()
-            .background(Color.gray.opacity(0.2))
-            .cornerRadius(12)
-    }
-}
-

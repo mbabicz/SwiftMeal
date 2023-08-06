@@ -14,23 +14,10 @@ struct AuthenticationView: View {
         VStack {
             if vm.activeSheet == nil {
                 VStack {
+                    
                     Spacer()
-                    HStack{
-                        Image("burger")
-                            .resizable()
-                            .aspectRatio(contentMode: .fill)
-                            .frame(width: 65, height: 65)
-                        VStack(){
-                            Text("SwiftMeal")
-                                .font(.custom("HelveticaNeue-Bold", size: 45))
-                                .fontWeight(.bold)
-                                .foregroundColor(.orange)
-                            Text("Delivery")
-                                .frame(alignment: .trailing)
-                                .font(.custom("HelveticaNeue-Bold", size: 20))
-                        }
-                    }
-                    .padding(.vertical)
+                    
+                    LogoView()
 
                     Spacer()
                     

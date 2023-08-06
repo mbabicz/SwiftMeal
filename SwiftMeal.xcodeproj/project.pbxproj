@@ -83,6 +83,10 @@
 		29C649E02A7BE42600C12A09 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 29211FD429DB6DC1000661FB /* Assets.xcassets */; };
 		29C649E22A7D89E100C12A09 /* SwiftMealDelivery-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 29C649E12A7D89E100C12A09 /* SwiftMealDelivery-Info.plist */; };
 		29C649E42A7D95A100C12A09 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C649E32A7D95A100C12A09 /* LoadingView.swift */; };
+		29C649E62A803D1100C12A09 /* AuthButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C649E52A803D1100C12A09 /* AuthButton.swift */; };
+		29C649E82A803D3F00C12A09 /* TogglePasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C649E72A803D3F00C12A09 /* TogglePasswordView.swift */; };
+		29C649EA2A803D6500C12A09 /* AuthTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C649E92A803D6500C12A09 /* AuthTextField.swift */; };
+		29C649EC2A803E3300C12A09 /* LogoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C649EB2A803E3300C12A09 /* LogoView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -168,6 +172,10 @@
 		29C649DE2A79923200C12A09 /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
 		29C649E12A7D89E100C12A09 /* SwiftMealDelivery-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "SwiftMealDelivery-Info.plist"; sourceTree = "<group>"; };
 		29C649E32A7D95A100C12A09 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
+		29C649E52A803D1100C12A09 /* AuthButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthButton.swift; sourceTree = "<group>"; };
+		29C649E72A803D3F00C12A09 /* TogglePasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TogglePasswordView.swift; sourceTree = "<group>"; };
+		29C649E92A803D6500C12A09 /* AuthTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthTextField.swift; sourceTree = "<group>"; };
+		29C649EB2A803E3300C12A09 /* LogoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -415,6 +423,7 @@
 				29272FD62A6C6B1E008BDFE1 /* HomeView.swift */,
 				29C649D12A76F67E00C12A09 /* ActiveOrderCard.swift */,
 				29C649E32A7D95A100C12A09 /* LoadingView.swift */,
+				29C649EB2A803E3300C12A09 /* LogoView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -453,6 +462,9 @@
 				29C649D92A79453500C12A09 /* AuthenticationView.swift */,
 				29C649DC2A79922900C12A09 /* SignUpView.swift */,
 				29C649DE2A79923200C12A09 /* SignInView.swift */,
+				29C649E52A803D1100C12A09 /* AuthButton.swift */,
+				29C649E72A803D3F00C12A09 /* TogglePasswordView.swift */,
+				29C649E92A803D6500C12A09 /* AuthTextField.swift */,
 			);
 			path = Auth;
 			sourceTree = "<group>";
@@ -783,13 +795,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				29C649EC2A803E3300C12A09 /* LogoView.swift in Sources */,
 				29272FC12A696393008BDFE1 /* Order.swift in Sources */,
+				29C649E62A803D1100C12A09 /* AuthButton.swift in Sources */,
 				29C649D22A76F67E00C12A09 /* ActiveOrderCard.swift in Sources */,
 				290F25322A6182B10032BD56 /* ContentView.swift in Sources */,
 				290F25302A6182B10032BD56 /* SwiftMealDeliveryApp.swift in Sources */,
 				29C649DA2A79453500C12A09 /* AuthenticationView.swift in Sources */,
 				29C649DD2A79922900C12A09 /* SignUpView.swift in Sources */,
 				29C649DF2A79923200C12A09 /* SignInView.swift in Sources */,
+				29C649E82A803D3F00C12A09 /* TogglePasswordView.swift in Sources */,
+				29C649EA2A803D6500C12A09 /* AuthTextField.swift in Sources */,
 				29C649D52A79448F00C12A09 /* User.swift in Sources */,
 				29272FD72A6C6B1E008BDFE1 /* HomeView.swift in Sources */,
 				29272FD12A696A15008BDFE1 /* OrderStatus.swift in Sources */,
