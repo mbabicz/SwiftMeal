@@ -11,6 +11,8 @@ import SwiftUI
 struct HomeView: View {
     
     @EnvironmentObject var orderVM: OrderViewModel
+    @EnvironmentObject var authVM: AuthViewModel
+
 
     var body: some View {
         VStack{
@@ -23,6 +25,12 @@ struct HomeView: View {
                     }
                 }
             }
+            Button {
+                authVM.signOut()
+            } label: {
+                Text("sign out")
+            }
+
         }
     }
 }
