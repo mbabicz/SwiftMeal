@@ -7,6 +7,7 @@
 
 import Foundation
 import Firebase
+import FirebaseFirestore
 import FirebaseFirestoreSwift
 
 class AuthViewModel: ObservableObject {
@@ -16,10 +17,9 @@ class AuthViewModel: ObservableObject {
     enum ActiveSheet {
         case signIn, signUp
     }
-    
-    private var db: Firestore { Firestore.firestore(app: FirebaseApp.app(name: "SwiftMealDelivery")!) }
+    private let db = Firestore.firestore(app: FirebaseApp.app(name: "SwiftMealDelivery")!)
     private let auth = Auth.auth(app: FirebaseApp.app(name: "SwiftMealDelivery")!)
-    
+
     @Published var user: User?
     @Published var showingAlert : Bool = false
     @Published var alertMessage = ""
