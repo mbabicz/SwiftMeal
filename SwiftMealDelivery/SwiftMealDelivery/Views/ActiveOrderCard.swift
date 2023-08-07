@@ -10,6 +10,7 @@ import SwiftUI
 struct ActiveOrderCard: View {
     
     var order: Order
+    @EnvironmentObject var orderVM: OrderViewModel
 
     var body: some View {
         ZStack{
@@ -23,7 +24,7 @@ struct ActiveOrderCard: View {
                 }
                 Spacer()
                 Button {
-                    //
+                    orderVM.updateOrder(orderID: order.id, userID: order.orderedBy!, status: 2)
                 } label: {
                     Text("Accept")
                 }

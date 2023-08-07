@@ -8,44 +8,35 @@
 import Foundation
 import FirebaseFirestore
 import SwiftUI
+import FirebaseAuth
 
 class OrderViewModel: ObservableObject {
     private let db = Firestore.firestore()
     @Published var activeOrders: [Order] = []
-
+    
     func fetchActiveOrders() {
-        getActiveOrders { [weak self] orders in
-            DispatchQueue.main.async {
-                self?.activeOrders = orders
-            }
-        }
-    }
-
-    private func getActiveOrders(completion: @escaping ([Order]) -> Void) {
         let ordersRef = db.collection("Users")
-        ordersRef.getDocuments { (querySnapshot, error) in
+        ordersRef.getDocuments { [weak self] (querySnapshot, error) in
+            guard let self = self else { return }
+
             if let error = error {
                 print("Error getting orders: \(error.localizedDescription)")
-                completion([])
                 return
             }
+            
+            // Create a copy of the current active orders to avoid race conditions
+            var updatedActiveOrders = self.activeOrders
 
-            var activeOrders: [Order] = []
-
-            let group = DispatchGroup()
             for document in querySnapshot?.documents ?? [] {
+                let userID = document.documentID
                 let userOrdersRef = document.reference.collection("Orders")
-                let query = userOrdersRef.whereField("isActive", isEqualTo: true).whereField("status", isEqualTo: 1)
-
-                group.enter()
-
-                query.addSnapshotListener { (snapshot, error) in
+                
+                userOrdersRef.whereField("isActive", isEqualTo: true).whereField("status", isEqualTo: 1).addSnapshotListener { (snapshot, error) in
                     if let error = error {
                         print("Error getting orders: \(error.localizedDescription)")
-                        group.leave()
                         return
                     }
-
+                    
                     for document in snapshot?.documents ?? [] {
                         guard let timestamp = document.data()["date"] as? Timestamp,
                               let products = document.data()["products"] as? [String: Int],
@@ -57,18 +48,26 @@ class OrderViewModel: ObservableObject {
                         }
 
                         let date = timestamp.dateValue()
-                        let order = Order(id: document.documentID, date: date, products: products, status: status, totalPrice: totalPrice, isActive: isActive)
-                        activeOrders.append(order)
+                        let order = Order(id: document.documentID, date: date, products: products, status: status, totalPrice: totalPrice, isActive: isActive, orderedBy: userID)
+
+                        // Check if the order already exists in updatedActiveOrders
+                        if let existingIndex = updatedActiveOrders.firstIndex(where: { $0.id == order.id }) {
+                            updatedActiveOrders[existingIndex] = order
+                        } else {
+                            updatedActiveOrders.append(order)
+                        }
                     }
-
-                    group.leave()
+                    
+                    // Filter out orders with changed isActive or status
+                    updatedActiveOrders.removeAll { order in
+                        let documentID = order.id
+                        let matchingDocuments = snapshot?.documents.filter { $0.documentID == documentID }
+                        return matchingDocuments?.isEmpty ?? true
+                    }
+                    
+                    // Update the global activeOrders with the updated list
+                    self.activeOrders = updatedActiveOrders
                 }
-            }
-
-            group.notify(queue: .main) {
-                // Remove duplicates from activeOrders
-                let uniqueOrders = self.removeDuplicates(from: activeOrders)
-                completion(uniqueOrders)
             }
         }
     }
@@ -86,4 +85,26 @@ class OrderViewModel: ObservableObject {
 
         return uniqueOrders
     }
+    
+    func updateOrder(orderID: String, userID: String, status: Int /*coordinates: [Double]?*/) {
+        let orderRef = db.collection("Users").document(userID).collection("Orders").document(orderID)
+        
+        let orderData: [String: Any] = [
+            "isActive": false,
+            "status": status,
+            "deliveryBy": Auth.auth().currentUser?.uid ?? ""
+        ]
+        
+//        if let coordinates = coordinates {
+//            orderData["coordinates"] = coordinates
+//        }
+        
+        orderRef.setData(orderData, merge: true) { error in
+            if let error = error {
+                print("Error updating order: \(error.localizedDescription)")
+                return
+            }
+        }
+    }
+
 }

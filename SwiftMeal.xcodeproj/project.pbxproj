@@ -459,14 +459,22 @@
 		29C649DB2A79920300C12A09 /* Auth */ = {
 			isa = PBXGroup;
 			children = (
+				29C649ED2A803FA400C12A09 /* Components */,
 				29C649D92A79453500C12A09 /* AuthenticationView.swift */,
 				29C649DC2A79922900C12A09 /* SignUpView.swift */,
 				29C649DE2A79923200C12A09 /* SignInView.swift */,
+			);
+			path = Auth;
+			sourceTree = "<group>";
+		};
+		29C649ED2A803FA400C12A09 /* Components */ = {
+			isa = PBXGroup;
+			children = (
 				29C649E52A803D1100C12A09 /* AuthButton.swift */,
 				29C649E72A803D3F00C12A09 /* TogglePasswordView.swift */,
 				29C649E92A803D6500C12A09 /* AuthTextField.swift */,
 			);
-			path = Auth;
+			path = Components;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

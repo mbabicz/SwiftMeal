@@ -14,6 +14,7 @@ struct Order: Identifiable, Hashable {
     let status: OrderStatus
     let totalPrice: Double
     let isActive: Bool
+    let orderedBy: String?
     
     var formattedTotalPrice : String{
         return String(format: "%.2f$", totalPrice)
@@ -28,6 +29,6 @@ struct Order: Identifiable, Hashable {
 
 extension Order {
     static var sampleOrder: Order {
-        return Order(id: "1", date: Date.now, products: ["RGfj6vb5Iep0PFSmmS5a" : 1], status: .delivery, totalPrice: 3.49, isActive: true)
+        return Order(id: "1", date: Date.now, products: ["RGfj6vb5Iep0PFSmmS5a" : 1], status: .delivery, totalPrice: 3.49, isActive: true, orderedBy: "123")
     }
 }
