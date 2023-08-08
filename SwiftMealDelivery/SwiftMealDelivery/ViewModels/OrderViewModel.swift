@@ -13,30 +13,26 @@ import FirebaseAuth
 class OrderViewModel: ObservableObject {
     private let db = Firestore.firestore()
     @Published var activeOrders: [Order] = []
-    
-    func fetchActiveOrders() {
-        let ordersRef = db.collection("Users")
-        ordersRef.getDocuments { [weak self] (querySnapshot, error) in
-            guard let self = self else { return }
 
+    func fetchActiveOrders() {
+        self.activeOrders.removeAll(keepingCapacity: false)
+        let ordersRef = db.collection("Users")
+        ordersRef.getDocuments { (querySnapshot, error) in
             if let error = error {
                 print("Error getting orders: \(error.localizedDescription)")
                 return
             }
-            
-            // Create a copy of the current active orders to avoid race conditions
-            var updatedActiveOrders = self.activeOrders
 
             for document in querySnapshot?.documents ?? [] {
                 let userID = document.documentID
                 let userOrdersRef = document.reference.collection("Orders")
-                
-                userOrdersRef.whereField("isActive", isEqualTo: true).whereField("status", isEqualTo: 1).addSnapshotListener { (snapshot, error) in
+
+                userOrdersRef.addSnapshotListener { (snapshot, error) in
                     if let error = error {
                         print("Error getting orders: \(error.localizedDescription)")
                         return
                     }
-                    
+
                     for document in snapshot?.documents ?? [] {
                         guard let timestamp = document.data()["date"] as? Timestamp,
                               let products = document.data()["products"] as? [String: Int],
@@ -50,40 +46,17 @@ class OrderViewModel: ObservableObject {
                         let date = timestamp.dateValue()
                         let order = Order(id: document.documentID, date: date, products: products, status: status, totalPrice: totalPrice, isActive: isActive, orderedBy: userID)
 
-                        // Check if the order already exists in updatedActiveOrders
-                        if let existingIndex = updatedActiveOrders.firstIndex(where: { $0.id == order.id }) {
-                            updatedActiveOrders[existingIndex] = order
+                        if isActive == true && status == .preparing {
+                            self.activeOrders.append(order)
                         } else {
-                            updatedActiveOrders.append(order)
+                            if let index = self.activeOrders.firstIndex(where: { $0.id == order.id }) {
+                                self.activeOrders.remove(at: index)
+                            }
                         }
                     }
-                    
-                    // Filter out orders with changed isActive or status
-                    updatedActiveOrders.removeAll { order in
-                        let documentID = order.id
-                        let matchingDocuments = snapshot?.documents.filter { $0.documentID == documentID }
-                        return matchingDocuments?.isEmpty ?? true
-                    }
-                    
-                    // Update the global activeOrders with the updated list
-                    self.activeOrders = updatedActiveOrders
                 }
             }
         }
-    }
-
-    private func removeDuplicates(from orders: [Order]) -> [Order] {
-        var uniqueOrders: [Order] = []
-        var orderIDs: Set<String> = []
-
-        for order in orders {
-            if !orderIDs.contains(order.id) {
-                uniqueOrders.append(order)
-                orderIDs.insert(order.id)
-            }
-        }
-
-        return uniqueOrders
     }
     
     func updateOrder(orderID: String, userID: String, status: Int /*coordinates: [Double]?*/) {
