@@ -15,22 +15,31 @@ struct HomeView: View {
 
 
     var body: some View {
-        VStack{
+        ScrollView {
+            Text("Active orders")
+                .font(.title)
             if !orderVM.activeOrders.isEmpty{
-                Text("Active orders")
-                    .font(.title)
-                ScrollView {
-                    ForEach(orderVM.activeOrders) { order in
-                        ActiveOrderCard(order: order)
-                    }
+                ForEach(orderVM.activeOrders) { order in
+                    ActiveOrderCard(order: order)
                 }
             }
+            Text("My orders")
+                .font(.title)
+            if !orderVM.userOrders.isEmpty {
+                ForEach(orderVM.userOrders) { order in
+                    ActiveOrderCard(order: order)
+                }
+            }
+            Spacer()
             Button {
                 authVM.signOut()
             } label: {
                 Text("sign out")
             }
-
+            
+        }
+        .onAppear{
+            orderVM.fetchUserOrders()
         }
     }
 }
