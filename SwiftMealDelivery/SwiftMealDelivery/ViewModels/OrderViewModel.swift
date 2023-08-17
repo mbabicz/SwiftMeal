@@ -10,14 +10,28 @@ import SwiftUI
 import Firebase
 import FirebaseAuth
 import FirebaseFirestore
+import CoreLocation
 
 
-class OrderViewModel: ObservableObject {
+class OrderViewModel: NSObject, ObservableObject, CLLocationManagerDelegate {
     private let db = Firestore.firestore()
     @Published var activeOrders: [Order] = []
     @Published var userOrders: [Order] = []
     private let auth = Auth.auth(app: FirebaseApp.app(name: "SwiftMealDelivery")!)
+    
+    private let locationManager = CLLocationManager()
 
+    override init() {
+        super.init()
+        setupLocationManager()
+    }
+
+    func setupLocationManager() {
+        locationManager.delegate = self
+        locationManager.requestWhenInUseAuthorization()
+        locationManager.startUpdatingLocation()
+    }
+    
     func fetchActiveOrders() {
         self.activeOrders.removeAll(keepingCapacity: false)
         let ordersRef = db.collection("Users")
@@ -102,11 +116,11 @@ class OrderViewModel: ObservableObject {
                 }
             }
         }
+        self.updateLocation()
     }
 
-
     
-    func updateOrder(orderID: String, userID: String, status: Int /*coordinates: [Double]?*/) {
+    func updateOrder(orderID: String, userID: String, status: Int) {
         let orderRef = db.collection("Users").document(userID).collection("Orders").document(orderID)
         
         let orderData: [String: Any] = [
@@ -114,10 +128,6 @@ class OrderViewModel: ObservableObject {
             "status": status,
             "deliveryBy": auth.currentUser?.uid ?? ""
         ]
-        
-//        if let coordinates = coordinates {
-//            orderData["coordinates"] = coordinates
-//        }
         
         orderRef.setData(orderData, merge: true) { error in
             if let error = error {
@@ -128,4 +138,32 @@ class OrderViewModel: ObservableObject {
         }
     }
 
+
+    func updateLocation() {
+        if let currentLocation = locationManager.location {
+            let latitude = currentLocation.coordinate.latitude
+            let longitude = currentLocation.coordinate.longitude
+            
+            print("Latitude: \(latitude), Longitude: \(longitude)")
+            
+            let geoPoint = GeoPoint(latitude: latitude, longitude: longitude)
+            for order in userOrders {
+                let orderRef = db.collection("Users").document(order.orderedBy ?? "").collection("Orders").document(order.id)
+                orderRef.updateData(["location": geoPoint]) { error in
+                    if let error = error {
+                        print("Error updating location for order \(order.id): \(error.localizedDescription)")
+                    } else {
+                        print("Location updated for order \(order.id)")
+                    }
+                }
+            }
+        } else {
+            print("Location not available")
+        }
+    }
+
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        self.updateLocation()
+    }
 }
+
