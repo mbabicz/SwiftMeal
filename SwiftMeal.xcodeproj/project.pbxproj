@@ -175,6 +175,7 @@
 		29C649E72A803D3F00C12A09 /* TogglePasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TogglePasswordView.swift; sourceTree = "<group>"; };
 		29C649E92A803D6500C12A09 /* AuthTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthTextField.swift; sourceTree = "<group>"; };
 		29C649EB2A803E3300C12A09 /* LogoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoView.swift; sourceTree = "<group>"; };
+		29E7D6D62A8F870800DF44CA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -440,6 +441,7 @@
 		29272FD92A6C6CF3008BDFE1 /* SwiftMealDelivery */ = {
 			isa = PBXGroup;
 			children = (
+				29E7D6D62A8F870800DF44CA /* Info.plist */,
 				290F252E2A6182B10032BD56 /* SwiftMealDelivery */,
 				290F253F2A6182B40032BD56 /* SwiftMealDeliveryTests */,
 				290F25492A6182B40032BD56 /* SwiftMealDeliveryUITests */,
@@ -938,7 +940,11 @@
 				DEVELOPMENT_TEAM = TU72F4GFFV;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = test;
+				INFOPLIST_FILE = SwiftMealDelivery/Info.plist;
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "";
+				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "Permissions are necessary to offer customers a food delivery tracking service, allowing real-time updates on their orders.";
+				INFOPLIST_KEY_NSLocationUsageDescription = "";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -969,7 +975,11 @@
 				DEVELOPMENT_TEAM = TU72F4GFFV;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = test;
+				INFOPLIST_FILE = SwiftMealDelivery/Info.plist;
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "";
+				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "Permissions are necessary to offer customers a food delivery tracking service, allowing real-time updates on their orders.";
+				INFOPLIST_KEY_NSLocationUsageDescription = "";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -1191,7 +1201,7 @@
 				DEVELOPMENT_TEAM = TU72F4GFFV;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = test;
+				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = test;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -1225,7 +1235,7 @@
 				DEVELOPMENT_TEAM = TU72F4GFFV;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = test;
+				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = test;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

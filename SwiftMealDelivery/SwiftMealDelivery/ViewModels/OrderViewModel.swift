@@ -28,8 +28,9 @@ class OrderViewModel: NSObject, ObservableObject, CLLocationManagerDelegate {
 
     func setupLocationManager() {
         locationManager.delegate = self
-        locationManager.requestWhenInUseAuthorization()
-        locationManager.startUpdatingLocation()
+        locationManager.requestAlwaysAuthorization()
+        locationManager.allowsBackgroundLocationUpdates = true
+        locationManager.startMonitoringSignificantLocationChanges()
     }
     
     func fetchActiveOrders() {
@@ -137,6 +138,7 @@ class OrderViewModel: NSObject, ObservableObject, CLLocationManagerDelegate {
             self.fetchUserOrders()
         }
     }
+
 
 
     func updateLocation() {
