@@ -119,17 +119,24 @@ class OrderViewModel: NSObject, ObservableObject, CLLocationManagerDelegate {
         }
         self.updateLocation()
     }
-
     
-    func updateOrder(orderID: String, userID: String, status: Int) {
+    func updateOrder(orderID: String, userID: String, isActive: Bool? = nil, status: Int? = nil) {
         let orderRef = db.collection("Users").document(userID).collection("Orders").document(orderID)
-        
-        let orderData: [String: Any] = [
-            "isActive": false,
-            "status": status,
-            "deliveryBy": auth.currentUser?.uid ?? ""
-        ]
-        
+
+        var orderData: [String: Any] = [:]
+
+        if let isActive = isActive {
+            orderData["isActive"] = isActive
+        }
+
+        if let status = status {
+            orderData["status"] = status
+        }
+
+        if let deliveryBy = auth.currentUser?.uid {
+            orderData["deliveryBy"] = deliveryBy
+        }
+
         orderRef.setData(orderData, merge: true) { error in
             if let error = error {
                 print("Error updating order: \(error.localizedDescription)")
@@ -138,8 +145,6 @@ class OrderViewModel: NSObject, ObservableObject, CLLocationManagerDelegate {
             self.fetchUserOrders()
         }
     }
-
-
 
     func updateLocation() {
         if let currentLocation = locationManager.location {

@@ -13,7 +13,6 @@ struct HomeView: View {
     @EnvironmentObject var orderVM: OrderViewModel
     @EnvironmentObject var authVM: AuthViewModel
 
-
     var body: some View {
         ScrollView {
             Text("Active orders")

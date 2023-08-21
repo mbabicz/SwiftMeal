@@ -24,20 +24,19 @@ struct ActiveOrderCard: View {
                 }
                 Spacer()
                 Button {
-                    orderVM.updateOrder(orderID: order.id, userID: order.orderedBy!, status: 2)
+                    orderVM.updateOrder(orderID: order.id, userID: order.orderedBy!, isActive: true)
                 } label: {
                     Text("Accept")
                 }
                 .padding()
-
             }
         }
         .padding()
     }
 }
 
-//struct ActiveOrderCard_Previews: PreviewProvider {
-//    static var previews: some View {
-//        //ActiveOrderCard(order: )
-//    }
-//}
+struct ActiveOrderCard_Previews: PreviewProvider {
+    static var previews: some View {
+        ActiveOrderCard(order: Order.sampleOrder)
+    }
+}
