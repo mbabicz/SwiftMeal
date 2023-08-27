@@ -55,23 +55,39 @@ class OrderViewModel: ObservableObject {
 
             for document in snapshot?.documents ?? [] {
                 guard let timestamp = document.data()["date"] as? Timestamp,
-                       let products = document.data()["products"] as? [String: Int],
-                       let statusInt = document.data()["status"] as? Int,
-                       let status = OrderStatus(rawValue: statusInt),
-                       let isActive = document.data()["isActive"] as? Bool,
-                       let totalPrice = document.data()["totalPrice"] as? Double else {
-                     continue
-                 }
-                
+                      let products = document.data()["products"] as? [String: Int],
+                      let statusInt = document.data()["status"] as? Int,
+                      let status = OrderStatus(rawValue: statusInt),
+                      let isActive = document.data()["isActive"] as? Bool,
+                      let totalPrice = document.data()["totalPrice"] as? Double,
+                      let locationArray = document.data()["location"] as? [Double],
+                      locationArray.count == 2 else {
+                        continue
+                }
+
+                let latitude = locationArray[0]
+                let longitude = locationArray[1]
+
                 let date = timestamp.dateValue()
-                let order = Order(id: document.documentID, date: date, products: products, status: status, totalPrice: totalPrice, isActive: isActive)
+                let order = Order(
+                    id: document.documentID,
+                    date: date,
+                    products: products,
+                    status: status,
+                    totalPrice: totalPrice,
+                    isActive: isActive,
+                    orderedBy: self.userID,
+                    latitude: latitude,
+                    longitude: longitude
+                )
                 self.orders.append(order)
-                
+
                 if isActive {
                     self.activeCount += 1
                 }
             }
         }
     }
+
     
 }
