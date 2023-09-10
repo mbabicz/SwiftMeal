@@ -68,6 +68,7 @@
 		2971E29629F2C2590077FCFC /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2971E29529F2C2590077FCFC /* UserViewModel.swift */; };
 		2971E29829F2C64A0077FCFC /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2971E29729F2C64A0077FCFC /* ContentView.swift */; };
 		2991C6C32A60388900581AC5 /* OrderStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2991C6C22A60388900581AC5 /* OrderStatus.swift */; };
+		299C570B2AAE59EC00221F93 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 299C570A2AAE59EC00221F93 /* MapView.swift */; };
 		29A795E42A4F19DE0018824F /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 29A795E32A4F19DE0018824F /* FirebaseAuth */; };
 		29A795E62A4F19DE0018824F /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 29A795E52A4F19DE0018824F /* FirebaseFirestore */; };
 		29A795E82A4F19DE0018824F /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 29A795E72A4F19DE0018824F /* FirebaseFirestoreSwift */; };
@@ -161,6 +162,7 @@
 		2971E29529F2C2590077FCFC /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
 		2971E29729F2C64A0077FCFC /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		2991C6C22A60388900581AC5 /* OrderStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderStatus.swift; sourceTree = "<group>"; };
+		299C570A2AAE59EC00221F93 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		29A979DD2A54A42F003A2168 /* CategoryPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryPicker.swift; sourceTree = "<group>"; };
 		29A979E12A5F3FE8003A2168 /* OrderDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderDetailsView.swift; sourceTree = "<group>"; };
 		29C649D12A76F67E00C12A09 /* ActiveOrderCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActiveOrderCard.swift; sourceTree = "<group>"; };
@@ -368,6 +370,7 @@
 				2904857D29FED53B00B7FF2B /* OrderHistoryView.swift */,
 				29A979DD2A54A42F003A2168 /* CategoryPicker.swift */,
 				29A979E12A5F3FE8003A2168 /* OrderDetailsView.swift */,
+				299C570A2AAE59EC00221F93 /* MapView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -853,6 +856,7 @@
 				2921201229DC4AC5000661FB /* Meal.swift in Sources */,
 				2971E29629F2C2590077FCFC /* UserViewModel.swift in Sources */,
 				2921201629DC65D4000661FB /* MainView.swift in Sources */,
+				299C570B2AAE59EC00221F93 /* MapView.swift in Sources */,
 				2971E29229F1A1CF0077FCFC /* LoadingView.swift in Sources */,
 				29211FD129DB6DC0000661FB /* SwiftMealApp.swift in Sources */,
 				2971E28B29EDCAC40077FCFC /* CartProductView.swift in Sources */,

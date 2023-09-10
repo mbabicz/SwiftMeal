@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Foundation
 
 struct OrderDetailsView: View {
     
@@ -17,9 +18,13 @@ struct OrderDetailsView: View {
         Text(order.formattedDate)
         Text(order.formattedTotalPrice)
         Text(order.status.name)
-        Text(String(order.isActive)) 
-
-
+        Text(String(order.isActive))
+        
+        MapView(currentLongitude: order.longitude!, currentLatitude: order.latitude!)
+//        if order.status != .ordered { .
+//            //            MapView(currentLongtitude: order.longitude!, currentLatitude: order.latitude!)
+//         MapView()
+//        }
     }
 }
 

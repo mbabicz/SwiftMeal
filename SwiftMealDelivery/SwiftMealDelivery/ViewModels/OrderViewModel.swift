@@ -102,12 +102,26 @@ class OrderViewModel: NSObject, ObservableObject, CLLocationManagerDelegate {
                               let statusInt = document.data()["status"] as? Int,
                               let status = OrderStatus(rawValue: statusInt),
                               let isActive = document.data()["isActive"] as? Bool,
-                              let totalPrice = document.data()["totalPrice"] as? Double else {
+                              let totalPrice = document.data()["totalPrice"] as? Double,
+                              let locationArray = document.data()["location"] as? [Double],
+                              locationArray.count == 2 else {
                             continue
                         }
+                        let latitude = locationArray[0]
+                        let longtitude = locationArray[1]
 
                         let date = timestamp.dateValue()
-                        let order = Order(id: document.documentID, date: date, products: products, status: status, totalPrice: totalPrice, isActive: isActive, orderedBy: userID)
+                        let order = Order(
+                            id: document.documentID,
+                            date: date,
+                            products: products,
+                            status: status,
+                            totalPrice: totalPrice,
+                            isActive: isActive,
+                            orderedBy: userID,
+                            latitude: latitude,
+                            longitude: longtitude
+                        )
 
                         // Check if new element already exists
                         if !(self?.userOrders.contains { $0.id == order.id } ?? false) {
