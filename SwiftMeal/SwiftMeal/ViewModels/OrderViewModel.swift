@@ -59,14 +59,14 @@ class OrderViewModel: ObservableObject {
                       let statusInt = document.data()["status"] as? Int,
                       let status = OrderStatus(rawValue: statusInt),
                       let isActive = document.data()["isActive"] as? Bool,
-                      let totalPrice = document.data()["totalPrice"] as? Double,
-                      let locationArray = document.data()["location"] as? [Double],
-                      locationArray.count == 2 else {
+                      let totalPrice = document.data()["totalPrice"] as? Double else {
                         continue
                 }
-
-                let latitude = locationArray[0]
-                let longitude = locationArray[1]
+                
+                // Read the `location` field if it exists
+                let locationArray = document.data()["location"] as? [Double]
+                let latitude = locationArray?[0]
+                let longtitude = locationArray?[1]
 
                 let date = timestamp.dateValue()
                 let order = Order(
@@ -78,7 +78,7 @@ class OrderViewModel: ObservableObject {
                     isActive: isActive,
                     orderedBy: self.userID,
                     latitude: latitude,
-                    longitude: longitude
+                    longitude: longtitude
                 )
                 self.orders.append(order)
 

@@ -15,12 +15,12 @@ import CoreLocation
 
 class OrderViewModel: NSObject, ObservableObject, CLLocationManagerDelegate {
     private let db = Firestore.firestore()
-    @Published var activeOrders: [Order] = []
-    @Published var userOrders: [Order] = []
     private let auth = Auth.auth(app: FirebaseApp.app(name: "SwiftMealDelivery")!)
-    
     private let locationManager = CLLocationManager()
 
+    @Published var activeOrders: [Order] = []
+    @Published var userOrders: [Order] = []
+    
     override init() {
         super.init()
         setupLocationManager()
