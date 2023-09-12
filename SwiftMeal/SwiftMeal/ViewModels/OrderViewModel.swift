@@ -63,24 +63,38 @@ class OrderViewModel: ObservableObject {
                         continue
                 }
                 
-                // Read the `location` field if it exists
-                let locationArray = document.data()["location"] as? [Double]
-                let latitude = locationArray?[0]
-                let longtitude = locationArray?[1]
-
-                let date = timestamp.dateValue()
-                let order = Order(
-                    id: document.documentID,
-                    date: date,
-                    products: products,
-                    status: status,
-                    totalPrice: totalPrice,
-                    isActive: isActive,
-                    orderedBy: self.userID,
-                    latitude: latitude,
-                    longitude: longtitude
-                )
-                self.orders.append(order)
+                // Read the `location` field as a GeoPoint if it exists
+                if let geoPoint = document.data()["location"] as? GeoPoint {
+                    let latitude = geoPoint.latitude
+                    let longitude = geoPoint.longitude
+                    let date = timestamp.dateValue()
+                    let order = Order(
+                        id: document.documentID,
+                        date: date,
+                        products: products,
+                        status: status,
+                        totalPrice: totalPrice,
+                        isActive: isActive,
+                        orderedBy: self.userID,
+                        latitude: latitude,
+                        longitude: longitude
+                    )
+                    self.orders.append(order)
+                } else {
+                    let date = timestamp.dateValue()
+                    let order = Order(
+                        id: document.documentID,
+                        date: date,
+                        products: products,
+                        status: status,
+                        totalPrice: totalPrice,
+                        isActive: isActive,
+                        orderedBy: self.userID,
+                        latitude: nil,
+                        longitude: nil
+                    )
+                    self.orders.append(order)
+                }
 
                 if isActive {
                     self.activeCount += 1
@@ -88,6 +102,4 @@ class OrderViewModel: ObservableObject {
             }
         }
     }
-
-    
 }

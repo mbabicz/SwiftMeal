@@ -47,7 +47,12 @@ struct OrderHistoryView: View {
                     .bold()
                 ){
                     ForEach(inactiveOrders) { order in
-                        OrderHistoryCardView(order: order)
+                        NavigationLink {
+                            OrderDetailsView(order: order)
+                        } label: {
+                            OrderHistoryCardView(order: order)
+                        }
+                        
                     }
                 }
             }

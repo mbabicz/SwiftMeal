@@ -20,7 +20,11 @@ struct OrderDetailsView: View {
         Text(order.status.name)
         Text(String(order.isActive))
         
-        MapView(currentLongitude: order.longitude!, currentLatitude: order.latitude!)
+        if let longitude = order.longitude, let latitude = order.latitude {
+            MapView(currentLongitude: longitude, currentLatitude: latitude)
+        } else {
+
+        }
 //        if order.status != .ordered { .
 //            //            MapView(currentLongtitude: order.longitude!, currentLatitude: order.latitude!)
 //         MapView()
