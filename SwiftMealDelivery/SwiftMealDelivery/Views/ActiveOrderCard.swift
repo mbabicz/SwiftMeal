@@ -24,7 +24,7 @@ struct ActiveOrderCard: View {
                 }
                 Spacer()
                 Button {
-                    orderVM.updateOrder(orderID: order.id, userID: order.orderedBy!, isActive: true)
+                    orderVM.updateOrder(orderID: order.id, userID: order.orderedBy!, isActive: false)
                 } label: {
                     Text("Accept")
                 }

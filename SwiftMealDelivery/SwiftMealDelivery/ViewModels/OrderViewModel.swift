@@ -89,8 +89,7 @@ class OrderViewModel: NSObject, ObservableObject, CLLocationManagerDelegate {
             for document in querySnapshot?.documents ?? [] {
                 let userID = document.documentID
                 let userOrdersRef = document.reference.collection("Orders")
-
-                userOrdersRef.whereField("deliveryBy", isEqualTo: self?.auth.currentUser!.uid ?? "").whereField("isActive", isEqualTo: false).getDocuments { (snapshot, error) in
+                userOrdersRef.whereField("deliveryBy", isEqualTo: self?.auth.currentUser!.uid ?? "").getDocuments { (snapshot, error) in
                     if let error = error {
                         print("Error getting orders: \(error.localizedDescription)")
                         return
@@ -102,13 +101,14 @@ class OrderViewModel: NSObject, ObservableObject, CLLocationManagerDelegate {
                               let statusInt = document.data()["status"] as? Int,
                               let status = OrderStatus(rawValue: statusInt),
                               let isActive = document.data()["isActive"] as? Bool,
-                              let totalPrice = document.data()["totalPrice"] as? Double,
-                              let locationArray = document.data()["location"] as? [Double],
-                              locationArray.count == 2 else {
+                              let totalPrice = document.data()["totalPrice"] as? Double else {
                             continue
                         }
-                        let latitude = locationArray[0]
-                        let longtitude = locationArray[1]
+                        
+                        // Read the `location` field if it exists
+                        let locationArray = document.data()["location"] as? [Double]
+                        let latitude = locationArray?[0]
+                        let longtitude = locationArray?[1]
 
                         let date = timestamp.dateValue()
                         let order = Order(
